@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+net.sf.marineapi.nmea.parser.GSTParser_getSemiMajorError_2_3_Test#testGetSemiMajorError,testrunner,10,10,0,0,0,false,

@@ -1,0 +1,5 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+net.sf.marineapi.nmea.parser.SentenceParser_setFieldCount_24_0_Test#testSetFieldCountDecrease,testrunner,10,10,0,0,0,false,
+net.sf.marineapi.nmea.parser.SentenceParser_setFieldCount_24_0_Test#testSetFieldCountIncrease,testrunner,10,10,0,0,0,false,
+net.sf.marineapi.nmea.parser.SentenceParser_setFieldCount_24_0_Test#testSetFieldCountNegative,testrunner,10,10,0,0,0,false,
+net.sf.marineapi.nmea.parser.SentenceParser_setFieldCount_24_0_Test#testSetFieldCountZero,testrunner,10,10,0,0,0,false,

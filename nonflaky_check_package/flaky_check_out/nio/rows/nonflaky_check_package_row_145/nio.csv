@@ -1,0 +1,6 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+cn.crane4j.core.executor.handler.ReflectiveDisassembleOperationHandler_process_0_0_Test#testProcessWithArrayItem,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.executor.handler.ReflectiveDisassembleOperationHandler_process_0_0_Test#testProcessWithCollectionItem,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.executor.handler.ReflectiveDisassembleOperationHandler_process_0_0_Test#testProcessWithEmptyTargets,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.executor.handler.ReflectiveDisassembleOperationHandler_process_0_0_Test#testProcessWithNonEmptyTargets,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.executor.handler.ReflectiveDisassembleOperationHandler_process_0_0_Test#testProcessWithNullGetter,testrunner,10,10,0,0,0,false,

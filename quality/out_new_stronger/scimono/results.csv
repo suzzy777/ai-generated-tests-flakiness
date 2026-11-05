@@ -1,0 +1,2 @@
+id,set,zip,focal_method,test_class,tests_csv,rid,status,tests_run,tests_failed,line_covered,line_total,branch_covered,branch_total,class_line_covered,class_line_total,mut_total,mut_killed,mut_survived,mut_no_coverage,mut_timed_out,mut_other,note
+agentFCV_out_FCV_row_013_GroupRequest_createGroup_0_0_Test,agentFCV,scimono=scimono-client=7487ec5,com.sap.scimono.client.GroupRequest#createGroup,com.sap.scimono.client.GroupRequest_createGroup_0_0_Test,./quality/task_csvs_new/FCV_1_15.csv,out_FCV_row_013,done,1,0,1,1,0,0,4,23,1,1,0,0,0,0,our JaCoCo agent; PIT with jupiter 5.7.0

@@ -1,0 +1,106 @@
+The focal method is `create(AISSentence[])` in the focal class `AISMessageFactory`, and their information is
+```net.sf.marineapi.ais.parser
+import java.lang.reflect.Constructor;
+import java.util.HashMap;
+import java.util.Map;
+import net.sf.marineapi.ais.message.AISMessage;
+import net.sf.marineapi.ais.util.Sixbit;
+import net.sf.marineapi.nmea.sentence.AISSentence;
+public class AISMessageFactory {
+private static AISMessageFactory instance;
+private Map<Integer, Class<? extends AISMessage>> parsers;
+public AISMessage create(AISSentence... sentences) {
+
+        AISMessageParser parser = new AISMessageParser(sentences);
+
+        if (!parsers.containsKey(parser.getMessageType())) {
+            String msg = String.format("no parser for message type %d", parser.getMessageType());
+            throw new IllegalArgumentException(msg);
+        }
+
+        AISMessage result;
+        Class<? extends AISMessage> c = parsers.get(parser.getMessageType());
+        try {
+            Constructor<? extends AISMessage> co = c.getConstructor(Sixbit.class);
+            result = co.newInstance(parser.getSixbit());
+        } catch (Exception e) {
+            throw new IllegalStateException(e.getCause());
+        }
+
+        return result;
+    }
+}```.
+    Signatures of Other methods in the focal class are `private AISMessageFactory(){}
+public static AISMessageFactory getInstance(){}
+
+`.
+    The brief information of dependent class `net.sf.marineapi.ais.parser.AISMessageParser` is
+    ```net.sf.marineapi.ais.parser
+import java.util.ArrayList;
+import java.util.List;
+import net.sf.marineapi.ais.message.AISMessage;
+import net.sf.marineapi.ais.util.Sixbit;
+import net.sf.marineapi.ais.util.Violation;
+import net.sf.marineapi.nmea.sentence.AISSentence;
+public class AISMessageParser {
+private static final int MESSAGE_TYPE = 0;
+private static final int REPEAT_INDICATOR = 1;
+private static final int MMSI = 2;
+private static final int[] FROM = { 0, 6, 8 };
+private static final int[] TO = { 6, 8, 38 };
+private Sixbit decoder;
+private String message = "";
+private int fillBits = 0;
+private int lastFragmentNr = 0;
+private List<Violation> fViolations = new ArrayList<>();
+public AISMessageParser() {
+    }
+public AISMessageParser(AISSentence... sentences) {
+        int index = 1;
+        for (AISSentence s : sentences) {
+            if (s.isFragmented() && s.getFragmentNumber() != index++) {
+                throw new IllegalArgumentException("Incorrect order of AIS sentences");
+            }
+            this.append(s.getPayload(), s.getFragmentNumber(), s.getFillBits());
+        }
+        this.decoder = new Sixbit(this.message, this.fillBits);
+    }
+protected AISMessageParser(Sixbit sb) {
+        if (sb.length() <= 0) {
+            throw new IllegalArgumentException("Sixbit decoder is empty!");
+        }
+        this.decoder = sb;
+    }
+
+public int getNrOfViolations(){}
+public List<Violation> getViolations(){}
+@Override
+    public int getMessageType(){}
+@Override
+    public int getRepeatIndicator(){}
+@Override
+    public int getMMSI(){}
+Sixbit getSixbit(){}
+@Override
+    public int getMessageType() {
+        return getSixbit().getInt(FROM[MESSAGE_TYPE], TO[MESSAGE_TYPE]);
+    }
+Sixbit getSixbit() {
+        if (decoder == null && message.isEmpty()) {
+            throw new IllegalStateException("Message is empty!");
+        }
+        return decoder == null ? new Sixbit(message, fillBits) : decoder;
+    }
+}```.
+    The brief information of dependent class `net.sf.marineapi.nmea.sentence.AISSentence...` is
+    ```net.sf.marineapi.nmea.sentence
+
+public interface AISSentence {
+
+int getNumberOfFragments();
+int getFragmentNumber();
+String getMessageId();
+String getRadioChannel();
+String getPayload();
+int getFillBits();
+}```.

@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.sap.scimono.client.GroupRequest_createGroup_0_0_Test#testCreateGroup,own_junit5_runner,100,0,0,100,0,inconclusive,FAIL;FAIL

@@ -1,0 +1,3 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+io.elasticjob.lite.internal.sharding.ShardingService_getShardingItems_6_0_Test#testGetShardingItemsWhenServerIsAvailable,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.sharding.ShardingService_getShardingItems_6_0_Test#testGetShardingItemsWhenServerIsNotAvailable,testrunner,10,10,0,0,0,false,

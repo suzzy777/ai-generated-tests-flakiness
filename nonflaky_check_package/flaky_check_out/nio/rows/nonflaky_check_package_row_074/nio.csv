@@ -1,0 +1,4 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+io.elasticjob.lite.internal.schedule.JobScheduleController_shutdown_7_0_Test#testShutdownThrowsJobSystemException,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.schedule.JobScheduleController_shutdown_7_0_Test#testShutdownWhenSchedulerIsAlreadyShutdown,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.schedule.JobScheduleController_shutdown_7_0_Test#testShutdownWhenSchedulerIsNotShutdown,testrunner,10,10,0,0,0,false,

@@ -1,0 +1,4 @@
+id,zip,module,java,focal,mockito_fix,test_classes,build_status,status,methods,flaky_generated,flaky_other,note,log
+out_default_row_028,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_3_2_Test,not_needed,no_flaky_found,,0,0,rounds 20/20; ,./new10_checks/marineapi_prompt/idflakies/rows/out_default_row_028/idflakies.log
+out_default_row_029,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_3_0_Test,not_needed,no_flaky_found,,0,0,rounds 20/20; ,./new10_checks/marineapi_prompt/idflakies/rows/out_default_row_029/idflakies.log
+out_default_row_030,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_3_1_Test,not_needed,no_flaky_found,,0,0,rounds 20/20; ,./new10_checks/marineapi_prompt/idflakies/rows/out_default_row_030/idflakies.log

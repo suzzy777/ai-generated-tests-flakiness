@@ -1,0 +1,11 @@
+test,type,generated,suspected_generated_polluters
+net.sf.marineapi.ais.event.AbstractAISMessageListenerTest.testBasicListenerWithUnexpectedMessage,OD,false,
+net.sf.marineapi.ais.event.AbstractAISMessageListenerTest.testConstructor,OD,false,
+net.sf.marineapi.ais.event.AbstractAISMessageListenerTest.testGenericsListener,OD,false,
+net.sf.marineapi.ais.event.AbstractAISMessageListenerTest.testGenericsListenerDefaultConstructorThrows,OD,false,
+net.sf.marineapi.ais.event.AbstractAISMessageListenerTest.testOnMessageWithExpectedMessage,OD,false,
+net.sf.marineapi.ais.event.AbstractAISMessageListenerTest.testParametrizedConstructor,OD,false,
+net.sf.marineapi.ais.event.AbstractAISMessageListenerTest.testSequenceListener,OD,false,
+net.sf.marineapi.ais.event.AbstractAISMessageListenerTest.testSequenceListenerWithIncorrectOrder,OD,false,
+net.sf.marineapi.ais.event.AbstractAISMessageListenerTest.testSequenceListenerWithMixedOrder,OD,false,
+net.sf.marineapi.ais.parser.AISMessageFactory_create_0_0_Test.testCreate,OD,true,

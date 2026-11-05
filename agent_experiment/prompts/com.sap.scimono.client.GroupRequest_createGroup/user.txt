@@ -1,0 +1,101 @@
+The focal method is `createGroup(Group)` in the focal class `GroupRequest`,
+Information of the focal method is
+```com.sap.scimono.client
+import static com.sap.scimono.api.API.GROUPS;
+import static com.sap.scimono.client.query.ResourcePageQuery.indexPageQuery;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.Response;
+import com.sap.scimono.client.query.IdentityPageQuery;
+import com.sap.scimono.client.query.IndexPageQuery;
+import com.sap.scimono.entity.Group;
+import com.sap.scimono.entity.paging.PagedByIdentitySearchResult;
+import com.sap.scimono.entity.paging.PagedByIndexSearchResult;
+import com.sap.scimono.entity.patch.PatchBody;
+public class GroupRequest {
+private final SCIMResourceRequest<Group> resourceRequestDelegate;
+public SCIMResponse<Group> createGroup(Group group) {
+    return resourceRequestDelegate.createResource(group);
+  }
+}```.
+
+    Signatures of Other methods in the focal class are `public GroupRequest(WebTarget targetSystem, SCIMRequest scimRequest){}
+
+
+`.
+    The brief information of dependent class `com.sap.scimono.client.SCIMRequest` is
+    ```com.sap.scimono.client
+import static com.sap.scimono.api.API.APPLICATION_JSON_SCIM;
+import static com.sap.scimono.client.ResourceAction.CREATE_BULK;
+import static com.sap.scimono.client.ResourceAction.CREATE_SINGLE;
+import static com.sap.scimono.client.ResourceAction.DELETE;
+import static com.sap.scimono.client.ResourceAction.GET_ALL;
+import static com.sap.scimono.client.ResourceAction.GET_SINGLE;
+import static com.sap.scimono.client.ResourceAction.PATCH_UPDATE;
+import static com.sap.scimono.client.ResourceAction.PUT_UPDATE;
+import static java.util.Collections.singleton;
+import static javax.ws.rs.HttpMethod.PATCH;
+import static javax.ws.rs.client.Entity.entity;
+import static javax.ws.rs.core.HttpHeaders.CONTENT_TYPE;
+import static javax.ws.rs.core.Response.Status.CREATED;
+import static javax.ws.rs.core.Response.Status.NO_CONTENT;
+import static javax.ws.rs.core.Response.Status.OK;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.EnumMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import javax.ws.rs.client.Invocation;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MultivaluedHashMap;
+import javax.ws.rs.core.MultivaluedMap;
+import javax.ws.rs.core.Response;
+public class SCIMRequest {
+private final MultivaluedMap<String, Object> httpHeaders;
+private final Map<ResourceAction, ActionResponseStatusConfig> scimActionsResponseStatusConfig;
+private SCIMRequest(Builder builder) {
+    this.httpHeaders = builder.httpHeaders;
+    this.scimActionsResponseStatusConfig = builder.scimActionsResponseStatusConfig;
+  }
+
+private String getDefaultContentType(){}
+}```.
+    The brief information of dependent class `com.sap.scimono.client.SCIMResourceRequest` is
+    ```com.sap.scimono.client
+import static com.sap.scimono.client.ResourceAction.CREATE_SINGLE;
+import static com.sap.scimono.client.ResourceAction.DELETE;
+import static com.sap.scimono.client.ResourceAction.GET_ALL;
+import static com.sap.scimono.client.ResourceAction.GET_SINGLE;
+import static com.sap.scimono.client.ResourceAction.PATCH_UPDATE;
+import static com.sap.scimono.client.ResourceAction.PUT_UPDATE;
+import static com.sap.scimono.client.query.ResourcePageQuery.indexPageQuery;
+import static com.sap.scimono.entity.paging.PagedByIndexSearchResult.DEFAULT_COUNT;
+import java.util.LinkedList;
+import java.util.List;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.GenericType;
+import javax.ws.rs.core.Response;
+import com.sap.scimono.client.query.SCIMQuery;
+import com.sap.scimono.entity.Resource;
+import com.sap.scimono.entity.paging.PagedByIdentitySearchResult;
+import com.sap.scimono.entity.paging.PagedByIndexSearchResult;
+import com.sap.scimono.entity.paging.PagedResult;
+import com.sap.scimono.entity.patch.PatchBody;
+class SCIMResourceRequest {
+private final WebTarget targetSystem;
+private final SCIMRequest scimRequest;
+private final Class<T> resourceClass;
+SCIMResourceRequest(WebTarget targetSystem, SCIMRequest scimRequest, Class<T> resourceClass) {
+    this.targetSystem = targetSystem;
+    this.scimRequest = scimRequest;
+    this.resourceClass = resourceClass;
+  }
+
+
+SCIMResponse<T> createResource(T resource) {
+    Response response = scimRequest.post(targetSystem, resource);
+    return SCIMResponse.newInstance(resourceClass, response, scimRequest.getScimActionResponseStatusConfig(CREATE_SINGLE));
+  }
+}```.

@@ -1,0 +1,3 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_isEmpty_5_1_Test#testIsEmptyWhenContainerIsEmpty,testrunner,10,10,0,0,0,false,
+com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_isEmpty_5_1_Test#testIsEmptyWhenContainerIsNotEmpty,testrunner,10,10,0,0,0,false,

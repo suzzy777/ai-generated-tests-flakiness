@@ -1,0 +1,170 @@
+package org.apache.cloudstack.network.tungsten.service;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
+import net.juniper.tungsten.api.ApiConnector;
+import net.juniper.tungsten.api.Status;
+import net.juniper.tungsten.api.types.NetworkPolicy;
+import net.juniper.tungsten.api.types.PolicyEntriesType;
+import net.juniper.tungsten.api.ApiObjectBase;
+import java.io.IOException;
+import org.apache.commons.lang3.StringUtils;
+import org.mockito.*;
+import org.junit.After;
+import org.junit.Assert;
+import static org.mockito.Mockito.*;
+import static org.junit.Assert.*;
+import com.cloud.utils.Pair;
+import com.cloud.utils.TungstenUtils;
+import com.cloud.utils.exception.CloudRuntimeException;
+import com.cloud.utils.net.NetUtils;
+import net.juniper.tungsten.api.ApiPropertyBase;
+import net.juniper.tungsten.api.ObjectReference;
+import net.juniper.tungsten.api.types.ActionListType;
+import net.juniper.tungsten.api.types.AddressGroup;
+import net.juniper.tungsten.api.types.AddressType;
+import net.juniper.tungsten.api.types.ApplicationPolicySet;
+import net.juniper.tungsten.api.types.ConfigRoot;
+import net.juniper.tungsten.api.types.DhcpOptionType;
+import net.juniper.tungsten.api.types.DhcpOptionsListType;
+import net.juniper.tungsten.api.types.Domain;
+import net.juniper.tungsten.api.types.FatFlowProtocols;
+import net.juniper.tungsten.api.types.FirewallPolicy;
+import net.juniper.tungsten.api.types.FirewallRule;
+import net.juniper.tungsten.api.types.FirewallRuleEndpointType;
+import net.juniper.tungsten.api.types.FirewallRuleMatchTagsType;
+import net.juniper.tungsten.api.types.FirewallSequence;
+import net.juniper.tungsten.api.types.FirewallServiceGroupType;
+import net.juniper.tungsten.api.types.FirewallServiceType;
+import net.juniper.tungsten.api.types.FloatingIp;
+import net.juniper.tungsten.api.types.FloatingIpPool;
+import net.juniper.tungsten.api.types.GlobalSystemConfig;
+import net.juniper.tungsten.api.types.GlobalVrouterConfig;
+import net.juniper.tungsten.api.types.InstanceIp;
+import net.juniper.tungsten.api.types.IpamSubnetType;
+import net.juniper.tungsten.api.types.KeyValuePairs;
+import net.juniper.tungsten.api.types.Loadbalancer;
+import net.juniper.tungsten.api.types.LoadbalancerHealthmonitor;
+import net.juniper.tungsten.api.types.LoadbalancerHealthmonitorType;
+import net.juniper.tungsten.api.types.LoadbalancerListener;
+import net.juniper.tungsten.api.types.LoadbalancerListenerType;
+import net.juniper.tungsten.api.types.LoadbalancerMember;
+import net.juniper.tungsten.api.types.LoadbalancerMemberType;
+import net.juniper.tungsten.api.types.LoadbalancerPool;
+import net.juniper.tungsten.api.types.LoadbalancerPoolType;
+import net.juniper.tungsten.api.types.LoadbalancerType;
+import net.juniper.tungsten.api.types.LogicalRouter;
+import net.juniper.tungsten.api.types.MacAddressesType;
+import net.juniper.tungsten.api.types.NetworkIpam;
+import net.juniper.tungsten.api.types.PolicyManagement;
+import net.juniper.tungsten.api.types.PolicyRuleType;
+import net.juniper.tungsten.api.types.PortMap;
+import net.juniper.tungsten.api.types.PortMappings;
+import net.juniper.tungsten.api.types.PortType;
+import net.juniper.tungsten.api.types.Project;
+import net.juniper.tungsten.api.types.SecurityGroup;
+import net.juniper.tungsten.api.types.SequenceType;
+import net.juniper.tungsten.api.types.ServiceGroup;
+import net.juniper.tungsten.api.types.SubnetListType;
+import net.juniper.tungsten.api.types.SubnetType;
+import net.juniper.tungsten.api.types.Tag;
+import net.juniper.tungsten.api.types.TagType;
+import net.juniper.tungsten.api.types.VirtualMachine;
+import net.juniper.tungsten.api.types.VirtualMachineInterface;
+import net.juniper.tungsten.api.types.VirtualNetwork;
+import net.juniper.tungsten.api.types.VirtualNetworkPolicyType;
+import net.juniper.tungsten.api.types.VnSubnetsType;
+import org.apache.cloudstack.api.ApiErrorCode;
+import org.apache.cloudstack.api.ServerApiException;
+import org.apache.cloudstack.network.tungsten.model.TungstenLoadBalancerMember;
+import org.apache.cloudstack.network.tungsten.model.TungstenRule;
+import org.apache.log4j.Logger;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+
+@RunWith(MockitoJUnitRunner.class)
+public class TungstenApi_addTungstenPolicyRule_70_0_Test {
+
+    @InjectMocks
+    private TungstenApi tungstenApi;
+
+    @Mock
+    private ApiConnector apiConnector;
+
+    @Mock
+    private NetworkPolicy networkPolicy;
+
+    @Mock
+    private PolicyEntriesType policyEntriesType;
+
+    @Mock
+    private Status status;
+
+    @Before
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Test
+    public void testAddTungstenPolicyRule() throws Exception {
+        // Arrange
+        String uuid = "test-uuid";
+        String policyUuid = "policy-uuid";
+        String action = "pass";
+        String protocol = "tcp";
+        String direction = "ingress";
+        String srcNetwork = "src-network";
+        String srcIpPrefix = "10.0.0.0";
+        int srcIpPrefixLen = 24;
+        int srcStartPort = 80;
+        int srcEndPort = 80;
+        String destNetwork = "dest-network";
+        String destIpPrefix = "192.168.1.0";
+        int destIpPrefixLen = 24;
+        int destStartPort = 8080;
+        int destEndPort = 8080;
+        when(apiConnector.findById(NetworkPolicy.class, policyUuid)).thenReturn(networkPolicy);
+        when(networkPolicy.getEntries()).thenReturn(policyEntriesType);
+        when(apiConnector.update(networkPolicy)).thenReturn(status);
+        doNothing().when(status).ifFailure(any());
+        // Act
+        ApiObjectBase result = tungstenApi.addTungstenPolicyRule(uuid, policyUuid, action, protocol, direction, srcNetwork, srcIpPrefix, srcIpPrefixLen, srcStartPort, srcEndPort, destNetwork, destIpPrefix, destIpPrefixLen, destStartPort, destEndPort);
+        // Assert
+        assertNotNull(result);
+        verify(apiConnector, times(2)).findById(NetworkPolicy.class, policyUuid);
+        verify(apiConnector).update(networkPolicy);
+        verify(status).ifFailure(any());
+    }
+
+    @Test
+    public void testAddTungstenPolicyRuleWithIOException() throws Exception {
+        // Arrange
+        String uuid = "test-uuid";
+        String policyUuid = "policy-uuid";
+        String action = "pass";
+        String protocol = "tcp";
+        String direction = "ingress";
+        String srcNetwork = "src-network";
+        String srcIpPrefix = "10.0.0.0";
+        int srcIpPrefixLen = 24;
+        int srcStartPort = 80;
+        int srcEndPort = 80;
+        String destNetwork = "dest-network";
+        String destIpPrefix = "192.168.1.0";
+        int destIpPrefixLen = 24;
+        int destStartPort = 8080;
+        int destEndPort = 8080;
+        when(apiConnector.findById(NetworkPolicy.class, policyUuid)).thenThrow(new IOException());
+        // Act
+        ApiObjectBase result = tungstenApi.addTungstenPolicyRule(uuid, policyUuid, action, protocol, direction, srcNetwork, srcIpPrefix, srcIpPrefixLen, srcStartPort, srcEndPort, destNetwork, destIpPrefix, destIpPrefixLen, destStartPort, destEndPort);
+        // Assert
+        assertNull(result);
+    }
+}

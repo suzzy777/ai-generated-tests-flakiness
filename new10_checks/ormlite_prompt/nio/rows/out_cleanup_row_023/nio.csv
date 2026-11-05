@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.j256.ormlite.table.SchemaUtils_createSchema_1_2_Test#testCreateSchemaWithSQLException,own_junit5_runner,100,100,0,0,0,false,

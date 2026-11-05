@@ -1,0 +1,14 @@
+zip,module,a_test_in_module,junit
+CAMEL-12025,components/camel-reactor,org.apache.camel.component.reactor.engine.ReactorStreamsServiceTest#testSubscriber,4
+SCB-2692,foundations/foundation-vertx,org.apache.servicecomb.foundation.vertx.client.tcp.TestNetClientWrapper#connect,5
+YARN-9405,hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-services/hadoop-yarn-services-core,org.apache.hadoop.yarn.service.TestServiceAM#testSyncSysFS,4
+cloudstack=plugins+network-elements+tungsten=df4cd2a,plugins/network-elements/tungsten,org.apache.cloudstack.network.tungsten.api.command.CreateTungstenFabricLogicalRouterCmdTest#executeTest,4
+crane4j=crane4j-core=b73311a,crane4j-core,cn.crane4j.core.container.DefaultContainerManagerTest#clear,4
+dubbodubborpcdubborpcdubbo628ad77,dubbo-rpc/dubbo-rpc-dubbo,org.apache.dubbo.rpc.protocol.dubbo.DubboLazyConnectTest#testSticky2,4
+eco-schema-catalog=store=95ee43b,store,com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainerTest#testGetByKey2,4
+elasticjobf0d,elastic-job-lite-core,io.elasticjob.lite.executor.JobExecutorFactoryTest#assertGetJobExecutorTwice,4
+karate=karate-core=935f0a8,karate-core,com.intuit.karate.JsonTest#testParsingParentAndLeafName,5
+marineapi0a1f308,.,net.sf.marineapi.ais.parser.AISMessage09ParserTest#getLongitudeInDegrees,4
+ormlitecore59309e5,.,com.j256.ormlite.dao.BaseDaoImplTest#testExecuteRawNoArgsThrow,5
+scimono=scimono-client=7487ec5,scimono-client,com.sap.scimono.client.ActionResponseStatusConfigTest#testIfResponseStatusIsNOTPartOfSuccessfulResponseStatuses,5
+shardingsphereelasticjobelasticjoblitecore23a2ab5,elastic-job-lite-core,io.elasticjob.lite.event.JobExecutionEventTest#assertExecutionFailure,4

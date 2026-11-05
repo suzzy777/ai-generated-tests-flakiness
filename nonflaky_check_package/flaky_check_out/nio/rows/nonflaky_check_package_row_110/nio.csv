@@ -1,0 +1,5 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.j256.ormlite.support.DatabaseConnectionProxy_isTableExists_18_0_Test#testIsTableExistsThrowsSQLException,own_junit5_runner,10,10,0,0,0,false,
+com.j256.ormlite.support.DatabaseConnectionProxy_isTableExists_18_0_Test#testIsTableExistsWhenProxyIsNotNullAndTableDoesNotExist,own_junit5_runner,10,10,0,0,0,false,
+com.j256.ormlite.support.DatabaseConnectionProxy_isTableExists_18_0_Test#testIsTableExistsWhenProxyIsNotNullAndTableExists,own_junit5_runner,10,10,0,0,0,false,
+com.j256.ormlite.support.DatabaseConnectionProxy_isTableExists_18_0_Test#testIsTableExistsWhenProxyIsNull,own_junit5_runner,10,10,0,0,0,false,

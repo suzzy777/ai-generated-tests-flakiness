@@ -1,0 +1,7 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandler_telnet_0_0_Test#testTelnetWithDetailFlag,testrunner,100,100,0,0,0,false,
+org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandler_telnet_0_0_Test#testTelnetWithIllegalPort,testrunner,100,100,0,0,0,false,
+org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandler_telnet_0_0_Test#testTelnetWithNoMessage,testrunner,100,100,0,0,0,false,
+org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandler_telnet_0_0_Test#testTelnetWithNonExistentPort,testrunner,100,100,0,0,0,false,
+org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandler_telnet_0_0_Test#testTelnetWithSpecificPort,testrunner,100,0,0,100,0,inconclusive,FAILURE;FAILURE
+org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandler_telnet_0_0_Test#testTelnetWithSpecificPortAndDetailFlag,testrunner,100,0,0,100,0,inconclusive,FAILURE;FAILURE

@@ -1,0 +1,3 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+org.apache.cloudstack.network.tungsten.service.TungstenApi_createOrUpdateTungstenNetworkPolicy_26_0_Test#testCreateOrUpdateTungstenNetworkPolicy_CreateNewPolicy,testrunner,10,10,0,0,0,false,
+org.apache.cloudstack.network.tungsten.service.TungstenApi_createOrUpdateTungstenNetworkPolicy_26_0_Test#testCreateOrUpdateTungstenNetworkPolicy_UpdateExistingPolicy,testrunner,10,10,0,0,0,false,

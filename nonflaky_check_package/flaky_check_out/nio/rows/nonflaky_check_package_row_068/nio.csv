@@ -1,0 +1,5 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+io.elasticjob.lite.internal.failover.FailoverService_getFailoverItems_5_0_Test#testGetFailoverItems,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.failover.FailoverService_getFailoverItems_5_0_Test#testGetFailoverItemsWithMatchingInstanceId,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.failover.FailoverService_getFailoverItems_5_0_Test#testGetFailoverItemsWithNoMatchingInstanceId,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.failover.FailoverService_getFailoverItems_5_0_Test#testGetFailoverItemsWithNonExistentNode,testrunner,10,10,0,0,0,false,

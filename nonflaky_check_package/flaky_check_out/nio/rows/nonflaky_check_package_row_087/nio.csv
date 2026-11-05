@@ -1,0 +1,4 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+io.elasticjob.lite.internal.schedule.JobScheduleController_pauseJob_4_0_Test#testPauseJobThrowsJobSystemException,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.schedule.JobScheduleController_pauseJob_4_0_Test#testPauseJobWhenSchedulerIsNotShutdown,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.schedule.JobScheduleController_pauseJob_4_0_Test#testPauseJobWhenSchedulerIsShutdown,testrunner,10,10,0,0,0,false,

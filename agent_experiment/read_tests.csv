@@ -1,0 +1,31 @@
+condition,row,zip,status,read_tests,files_opened
+FCV,1,dubbodubborpcdubborpcdubboaa9f16e,generated,no,
+FCV,2,dubbodubborpcdubborpcdubboaa9f16e,generated,no,
+FCV,3,dubbodubborpcdubborpcdubboaa9f16e,generated,no,
+FCV,4,dubbodubborpcdubborpcdubbo628ad77,generated,no,
+FCV,5,dubbodubborpcdubborpcdubbo628ad77,generated,no,
+FCV,6,dubbodubborpcdubborpcdubbo628ad77,generated,no,
+FCV,7,marineapi0a1f308,generated,searched,
+FCV,8,marineapi0a1f308,generated,read,AISMessageFactoryTest.java
+FCV,9,marineapi0a1f308,generated,searched,
+FCV,10,ormlitecore59309e5,generated,read,LoggerFactoryTest.java
+FCV,11,ormlitecore59309e5,generated,read,LoggerFactoryTest.java
+FCV,12,ormlitecore59309e5,generated,read,LoggerFactoryTest.java
+FCV,13,scimono=scimono-client=7487ec5,generated,searched,
+FCV,14,scimono=scimono-client=7487ec5,generated,no,
+FCV,15,scimono=scimono-client=7487ec5,generated,read,GroupRequestTest.java
+FCV,16,elasticjobf0d,generated,no,
+FCV,17,elasticjobf0d,generated,no,
+FCV,18,elasticjobf0d,generated,no,
+FCV,19,shardingsphereelasticjobelasticjoblitecore4b9afa4,generated,read,JobRegistryTest.java
+FCV,20,shardingsphereelasticjobelasticjoblitecore4b9afa4,generated,no,
+FCV,21,shardingsphereelasticjobelasticjoblitecore4b9afa4,generated,no,
+FCV,22,ormlitecore59309e5,generated,read,BaseCoreTest.java SchemaUtilsTest.java
+FCV,23,ormlitecore59309e5,generated,read,BaseCoreTest.java SchemaUtilsTest.java
+FCV,24,ormlitecore59309e5,generated,read,BaseCoreTest.java SchemaUtilsTest.java
+FCV,25,shardingsphereelasticjobelasticjoblitecore4b9afa4,generated,no,
+FCV,26,shardingsphereelasticjobelasticjoblitecore4b9afa4,generated,no,
+FCV,27,shardingsphereelasticjobelasticjoblitecore4b9afa4,generated,no,
+FCV,28,marineapi0a1f308,generated,read,AISMessage09ParserTest.java
+FCV,29,marineapi0a1f308,generated,read,AISMessage09ParserTest.java
+FCV,30,marineapi0a1f308,generated,searched,

@@ -1,0 +1,4 @@
+test,type,generated,suspected_generated_polluters
+org.apache.dubbo.rpc.protocol.dubbo.DubboProtocolTest.testDubboProtocolWithMina,OD,false,org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandler_telnet_0_0_Test#testTelnetWithCancelCommand;org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandler_telnet_0_0_Test#testTelnetWithEmptyMessage;org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandler_telnet_0_0_Test#testTelnetWithInvalidServiceName;org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandler_telnet_0_0_Test#testTelnetWithNullMessage;org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandler_telnet_0_0_Test#testTelnetWithValidServiceName
+org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest.testListAllPort,OD,false,
+org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest.testListDetail,OD,false,

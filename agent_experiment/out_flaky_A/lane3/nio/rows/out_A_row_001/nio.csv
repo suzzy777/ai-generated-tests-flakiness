@@ -1,0 +1,7 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandler_telnet_0_0_Test#testTelnetWithDoubleDotMessage,testrunner,100,100,0,0,0,false,
+org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandler_telnet_0_0_Test#testTelnetWithEmptyMessage,testrunner,100,100,0,0,0,false,
+org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandler_telnet_0_0_Test#testTelnetWithExistingService,testrunner,100,100,0,0,0,false,
+org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandler_telnet_0_0_Test#testTelnetWithNonExistingService,testrunner,100,100,0,0,0,false,
+org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandler_telnet_0_0_Test#testTelnetWithNullMessage,testrunner,100,100,0,0,0,false,
+org.apache.dubbo.rpc.protocol.dubbo.telnet.ChangeTelnetHandler_telnet_0_0_Test#testTelnetWithSlashMessage,testrunner,100,100,0,0,0,false,

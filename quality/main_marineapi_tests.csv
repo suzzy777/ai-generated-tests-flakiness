@@ -1,0 +1,2 @@
+project,sha,module,generated_test,test_file,focal_method,zip,java,junit,mockito_fix,focal_from_test,focal_from_test_type
+https://github.com/ktuukkan/marine-api,af0003847db9ba822f67d4f1dceb8de3fe63250a,.,net.sf.marineapi.ais.parser.AISMessageFactory_create_0_3_Test#testCreate_NoParserForMessageType,out_part2/runs/row_045/tests/marineapi/net/sf/marineapi/ais/parser/AISMessageFactory_create_0_3_Test.java,net.sf.marineapi.ais.parser.AISMessageFactory#create,marineapi0a1f308,8,4,false,net.sf.marineapi.ais.parser.AISMessageFactoryTest#testCreateWithTwo,od

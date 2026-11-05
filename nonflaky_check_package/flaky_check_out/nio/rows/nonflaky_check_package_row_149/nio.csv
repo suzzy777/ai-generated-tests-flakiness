@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+cn.crane4j.core.support.Crane4jGlobalConfiguration_getDisassembleOperationHandler_14_1_Test#testGetDisassembleOperationHandler,testrunner,10,10,0,0,0,false,

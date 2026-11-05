@@ -1,0 +1,4 @@
+id,zip,module,focal,test,outcome
+out_part1_row_001,commons-lang=.=1163e17,.,org.apache.commons.lang3.builder.HashCodeBuilder#reflectionHashCode,org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_8_0_Test#testReflectionHashCodeWithExclusion,passed
+out_part1_row_001,commons-lang=.=1163e17,.,org.apache.commons.lang3.builder.HashCodeBuilder#reflectionHashCode,org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_8_0_Test#testReflectionHashCodeWithNullObject,failed
+out_part1_row_001,commons-lang=.=1163e17,.,org.apache.commons.lang3.builder.HashCodeBuilder#reflectionHashCode,org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_8_0_Test#testReflectionHashCodeWithValidObject,passed

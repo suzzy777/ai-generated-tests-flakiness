@@ -1,0 +1,5 @@
+id,zip,module,focal,test,outcome
+out_default_row_022,ormlitecore59309e5,.,com.j256.ormlite.table.SchemaUtils#createSchema,com.j256.ormlite.table.SchemaUtils_createSchema_3_1_Test#testCreateSchema,failed
+out_default_row_022,ormlitecore59309e5,.,com.j256.ormlite.table.SchemaUtils#createSchema,com.j256.ormlite.table.SchemaUtils_createSchema_3_1_Test#testCreateSchemaWithException,passed
+out_default_row_023,ormlitecore59309e5,.,com.j256.ormlite.table.SchemaUtils#createSchema,com.j256.ormlite.table.SchemaUtils_createSchema_3_1_Test#testCreateSchema,failed
+out_default_row_023,ormlitecore59309e5,.,com.j256.ormlite.table.SchemaUtils#createSchema,com.j256.ormlite.table.SchemaUtils_createSchema_3_1_Test#testCreateSchemaSQLException,failed

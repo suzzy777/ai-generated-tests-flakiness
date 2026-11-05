@@ -1,0 +1,5 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+net.sf.marineapi.ais.parser.AISMessageFactory_create_0_0_Test#testCreateMultipleSentences,testrunner,100,0,0,100,0,inconclusive,ERROR;ERROR
+net.sf.marineapi.ais.parser.AISMessageFactory_create_0_0_Test#testCreateSingleSentence,testrunner,100,0,0,100,0,inconclusive,ERROR;ERROR
+net.sf.marineapi.ais.parser.AISMessageFactory_create_0_0_Test#testCreateWithIncorrectOrder,testrunner,100,100,0,0,0,false,
+net.sf.marineapi.ais.parser.AISMessageFactory_create_0_0_Test#testCreateWithNoParser,testrunner,100,100,0,0,0,false,

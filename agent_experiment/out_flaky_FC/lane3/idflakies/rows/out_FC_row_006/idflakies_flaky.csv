@@ -1,0 +1,3 @@
+test,type,generated,suspected_generated_polluters
+org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest.testListAllPort,OD,false,
+org.apache.dubbo.rpc.protocol.dubbo.telnet.PortTelnetHandlerTest.testListDetail,OD,false,

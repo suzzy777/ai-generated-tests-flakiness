@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+org.apache.servicecomb.foundation.vertx.http.StandardHttpServletResponseEx_getBodyBytes_2_0_Test#testGetBodyBytes,own_junit5_runner,10,10,0,0,0,false,

@@ -1,0 +1,61 @@
+The focal method is `isAccurate()` in the focal class `AISMessage09Parser`, and their information is
+```net.sf.marineapi.ais.parser
+import net.sf.marineapi.ais.message.AISMessage09;
+import net.sf.marineapi.ais.util.AISRuleViolation;
+import net.sf.marineapi.ais.util.Angle12;
+import net.sf.marineapi.ais.util.Latitude27;
+import net.sf.marineapi.ais.util.Longitude28;
+import net.sf.marineapi.ais.util.Sixbit;
+import net.sf.marineapi.ais.util.SpeedOverGround;
+import net.sf.marineapi.ais.util.TimeStamp;
+import java.text.DecimalFormat;
+class AISMessage09Parser {
+private final static String SEPARATOR			    = "\n\t";
+private static final int    ALTITUDE                = 0;
+private final static int	SPEEDOVERGROUND			= 1;
+private final static int	POSITIONACCURACY		= 2;
+private final static int	LONGITUDE				= 3;
+private final static int	LATITUDE				= 4;
+private final static int	COURSEOVERGROUND		= 5;
+private final static int	TIMESTAMP				= 6;
+private final static int	REGIONAL				= 7;
+private final static int	DTE		        		= 8;
+private static final int    SPARE	                = 9;
+private static final int    ASSIGNEDMODEFLAG	    = 10;
+private static final int    RAIMFLAG	            = 11;
+private static final int    RADIOSTATUS	            = 12;
+private static final int[] FROM = new int[]{38,50,60,61,89,116,128,134,142,43,146,147,149};
+private static final int[] TO =   new int[]{50,60,61,89,116,128,134,142,43,146,147,149,167};
+private int fAltitude;
+private int		fSOG;
+private boolean	fPositionAccuracy;
+private int		fLongitude;
+private int		fLatitude;
+private int		fCOG;
+private int		fTimeStamp;
+private int	    fRegional;
+private boolean	fDTE;
+private boolean	fAssignedModeFlag;
+private boolean	fRAIMFlag;
+private int	fRadioStatus;
+public AISMessage09Parser(Sixbit content){}
+public boolean isAccurate() { return fPositionAccuracy; }
+}```.
+    Signatures of Other methods in the focal class are `public int getAltitude(){}
+public int getSpeedOverGround(){}
+public String getSOGString(){}
+public double getLongitudeInDegrees(){}
+public double getLatitudeInDegrees(){}
+public double getCourseOverGround(){}
+public int getTimeStamp(){}
+public int getRegional(){}
+public boolean getDTEFlag(){}
+public boolean getAssignedModeFlag(){}
+public boolean getRAIMFlag(){}
+public int getRadioStatus(){}
+@Override
+    public boolean hasLongitude(){}
+@Override
+    public boolean hasLatitude(){}
+public String toString(){}
+public AISMessage09Parser(Sixbit content){}`.

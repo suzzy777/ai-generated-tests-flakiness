@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.intuit.karate.JsonUtils_toJson_2_0_Test#testToJson,own_junit5_runner,100,100,0,0,0,false,

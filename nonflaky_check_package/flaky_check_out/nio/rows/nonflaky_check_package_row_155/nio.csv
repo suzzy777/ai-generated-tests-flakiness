@@ -1,0 +1,4 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+cn.crane4j.core.util.ReflectUtils_scanAllAnnotationFromElements_15_0_Test#testScanAllAnnotationFromElements_withEmptyArray,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.util.ReflectUtils_scanAllAnnotationFromElements_15_0_Test#testScanAllAnnotationFromElements_withNonEmptyArrayAndEmptyAnnotations,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.util.ReflectUtils_scanAllAnnotationFromElements_15_0_Test#testScanAllAnnotationFromElements_withNonEmptyArrayAndNonEmptyAnnotations,testrunner,10,10,0,0,0,false,

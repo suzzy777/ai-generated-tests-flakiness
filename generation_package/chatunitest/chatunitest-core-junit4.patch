@@ -1,0 +1,82 @@
+diff --git a/src/main/java/zju/cst/aces/dto/TestSkeleton.java b/src/main/java/zju/cst/aces/dto/TestSkeleton.java
+index 01dd487..a5939f3 100644
+--- a/src/main/java/zju/cst/aces/dto/TestSkeleton.java
++++ b/src/main/java/zju/cst/aces/dto/TestSkeleton.java
+@@ -20,7 +20,7 @@ public class TestSkeleton {
+     private String fullTestName;
+     private String packageName;
+     private List<String> imports;
+-    private String skeleton = "@ExtendWith(MockitoExtension.class)\npublic class TestClass {\n}";
++    private String skeleton = zju.cst.aces.util.JUnitFlavor.defaultSkeleton();
+ 
+     public static void main(String[] args) {
+         TestSkeleton testSkeleton = new TestSkeleton(sk);
+diff --git a/src/main/java/zju/cst/aces/runner/AbstractRunner.java b/src/main/java/zju/cst/aces/runner/AbstractRunner.java
+index 0ff930f..e597bc6 100644
+--- a/src/main/java/zju/cst/aces/runner/AbstractRunner.java
++++ b/src/main/java/zju/cst/aces/runner/AbstractRunner.java
+@@ -85,12 +85,7 @@ public abstract class AbstractRunner {
+     public static String repairImports(String code, List<String> imports) {
+         try {
+             CompilationUnit cu = StaticJavaParser.parse(code);
+-            cu.addImport("org.mockito", false, true);
+-            cu.addImport("org.junit.jupiter.api", false, true);
+-            cu.addImport("org.mockito.Mockito", true, true);
+-            cu.addImport("org.junit.jupiter.api.Assertions", true, true);
+-            cu.addImport("org.junit.jupiter.api.extension.ExtendWith", false, false);
+-            cu.addImport("org.mockito.junit.jupiter.MockitoExtension", false, false);
++            zju.cst.aces.util.JUnitFlavor.addTestImports(cu);
+             imports.forEach(i -> cu.addImport(i.replace("import ", "").replace(";", "")));
+             return cu.toString();
+         } catch (ParseProblemException e) {
+diff --git a/src/main/java/zju/cst/aces/util/JUnitFlavor.java b/src/main/java/zju/cst/aces/util/JUnitFlavor.java
+new file mode 100644
+index 0000000..cbfefcb
+--- /dev/null
++++ b/src/main/java/zju/cst/aces/util/JUnitFlavor.java
+@@ -0,0 +1,45 @@
++package zju.cst.aces.util;
++
++import com.github.javaparser.ast.CompilationUnit;
++
++/**
++ * Chooses which JUnit flavour the generated tests use.
++ * Default is JUnit 5, exactly as before. Run Maven with -Dchatunitest.junit=4
++ * to make ChatUniTest add JUnit 4 + Mockito runner imports instead.
++ */
++public final class JUnitFlavor {
++    private JUnitFlavor() {}
++
++    public static boolean isJUnit4() {
++        return "4".equals(System.getProperty("chatunitest.junit", "5").trim());
++    }
++
++    /** Adds the imports that repairImports always added, in the chosen flavour. */
++    public static void addTestImports(CompilationUnit cu) {
++        if (isJUnit4()) {
++            cu.addImport("org.mockito", false, true);
++            cu.addImport("org.junit.Test");
++            cu.addImport("org.junit.Before");
++            cu.addImport("org.junit.After");
++            cu.addImport("org.junit.Assert");
++            cu.addImport("org.mockito.Mockito", true, true);
++            cu.addImport("org.junit.Assert", true, true);
++            cu.addImport("org.junit.runner.RunWith", false, false);
++            cu.addImport("org.mockito.junit.MockitoJUnitRunner", false, false);
++        } else {
++            cu.addImport("org.mockito", false, true);
++            cu.addImport("org.junit.jupiter.api", false, true);
++            cu.addImport("org.mockito.Mockito", true, true);
++            cu.addImport("org.junit.jupiter.api.Assertions", true, true);
++            cu.addImport("org.junit.jupiter.api.extension.ExtendWith", false, false);
++            cu.addImport("org.mockito.junit.jupiter.MockitoExtension", false, false);
++        }
++    }
++
++    /** The empty test class the generated test methods are put into. */
++    public static String defaultSkeleton() {
++        return isJUnit4()
++                ? "@RunWith(MockitoJUnitRunner.class)\npublic class TestClass {\n}"
++                : "@ExtendWith(MockitoExtension.class)\npublic class TestClass {\n}";
++    }
++}

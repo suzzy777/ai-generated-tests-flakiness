@@ -1,0 +1,4 @@
+experiment,id,method,brittle,brittle_alone,after_1,after_2,state_setter,named_by_od_confirm
+main_flaky,out_part1_row_070,com.j256.ormlite.table.SchemaUtils_createSchema_3_0_Test#testCreateSchemaSQLException,com.j256.ormlite.logger.LoggerTest#testNoCurliesButArgs,failed,passed,passed,yes,yes
+main_nonflaky,nonflaky_check_package_row_106,com.j256.ormlite.logger.LoggerFactory_setLogBackendType_6_0_Test#testSetLogBackendTypeAvailable,com.j256.ormlite.logger.LoggerTest#testNotEnoughArgs,failed,passed,passed,yes,no
+main_nonflaky,nonflaky_check_package_row_106,com.j256.ormlite.logger.LoggerFactory_setLogBackendType_6_0_Test#testSetLogBackendTypeNotAvailable,com.j256.ormlite.logger.LoggerTest#testNotEnoughArgs,failed,passed,passed,yes,yes

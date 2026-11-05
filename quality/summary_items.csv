@@ -1,0 +1,35 @@
+id,subject,group,status,line,branch,mut_stronger,mut_all,mutants_stronger,mutants_all
+agentA_out_A_row_007_AISMessageFactory_create_0_0_Test,marineapi,agent A,done,0.0,0.0,0.0,3.5714285714285716,3,28
+agentA_out_A_row_008_AISMessageFactory_create_0_0_Test,marineapi,agent A,done,36.36363636363637,50.0,33.333333333333336,21.428571428571427,3,28
+agentA_out_A_row_009_AISMessageFactory_create_0_0_Test,marineapi,agent A,tests_fail,0.0,0.0,,,,
+agentF_out_F_row_007_AISMessageFactory_create_0_0_Test,marineapi,agent F,done,81.81818181818181,100.0,100.0,78.57142857142857,3,28
+agentF_out_F_row_008_AISMessageFactory_create_0_0_Test,marineapi,agent F,done,100.0,100.0,100.0,78.57142857142857,3,28
+agentF_out_F_row_009_AISMessageFactory_create_0_0_Test,marineapi,agent F,done,63.63636363636363,50.0,66.66666666666667,64.28571428571429,3,28
+developer_marineapi0a1f308_AISMessageFactoryTest,marineapi,developer,done,63.63636363636363,50.0,66.66666666666667,64.28571428571429,3,28
+main_out_part2_row_045_AISMessageFactory_create_0_3_Test,marineapi,current (main study),done,0.0,0.0,0.0,3.5714285714285716,3,28
+prompt_out_cleanup_row_007_AISMessageFactory_create_0_2_Test,marineapi,cleanup,done,0.0,0.0,0.0,3.5714285714285716,3,28
+prompt_out_cleanup_row_008_AISMessageFactory_create_0_0_Test,marineapi,cleanup,done,0.0,0.0,0.0,3.5714285714285716,3,28
+prompt_out_cleanup_row_009_AISMessageFactory_create_0_0_Test,marineapi,cleanup,done,0.0,0.0,0.0,3.5714285714285716,3,28
+agentA_out_A_row_010_LoggerFactory_setLogBackendType_0_0_Test,ormlite,agent A,done,100.0,100.0,100.0,69.23076923076923,2,13
+agentA_out_A_row_011_LoggerFactory_setLogBackendType_0_0_Test,ormlite,agent A,done,100.0,100.0,100.0,100.0,2,13
+agentA_out_A_row_012_LoggerFactory_setLogBackendType_0_0_Test,ormlite,agent A,done,100.0,100.0,100.0,100.0,2,13
+agentF_out_F_row_010_LoggerFactory_setLogBackendType_0_0_Test,ormlite,agent F,done,100.0,100.0,100.0,69.23076923076923,2,13
+agentF_out_F_row_011_LoggerFactory_setLogBackendType_0_0_Test,ormlite,agent F,done,100.0,100.0,100.0,69.23076923076923,2,13
+agentF_out_F_row_012_LoggerFactory_setLogBackendType_0_0_Test,ormlite,agent F,done,100.0,100.0,100.0,69.23076923076923,2,13
+developer_ormlitecore59309e5_LoggerFactoryTest,ormlite,developer,done,100.0,100.0,50.0,23.076923076923077,2,13
+prompt_out_cleanup_row_010_LoggerFactory_setLogBackendType_6_3_Test,ormlite,cleanup,done,50.0,50.0,50.0,84.61538461538461,2,13
+prompt_out_cleanup_row_011_LoggerFactory_setLogBackendType_6_1_Test,ormlite,cleanup,done,50.0,50.0,50.0,84.61538461538461,2,13
+prompt_out_cleanup_row_012_LoggerFactory_setLogBackendType_6_0_Test,ormlite,cleanup,done,100.0,100.0,100.0,100.0,2,13
+prompt_out_default_row_011_LoggerFactory_setLogBackendType_6_2_Test,ormlite,current,done,100.0,100.0,100.0,100.0,2,13
+prompt_out_default_row_012_LoggerFactory_setLogBackendType_6_0_Test,ormlite,current,done,100.0,100.0,100.0,69.23076923076923,2,13
+agentA_out_A_row_013_GroupRequest_createGroup_0_0_Test,scimono,agent A,done,100.0,,100.0,100.0,1,2
+agentA_out_A_row_014_GroupRequest_createGroup_0_0_Test,scimono,agent A,done,100.0,,100.0,100.0,1,2
+agentA_out_A_row_015_GroupRequest_createGroup_0_0_Test,scimono,agent A,done,100.0,,100.0,100.0,1,2
+agentF_out_F_row_013_GroupRequest_createGroup_0_0_Test,scimono,agent F,tests_fail,100.0,,,,,
+agentF_out_F_row_014_GroupRequest_createGroup_0_0_Test,scimono,agent F,tests_fail,100.0,,,,,
+agentF_out_F_row_015_GroupRequest_createGroup_0_0_Test,scimono,agent F,done,100.0,,100.0,100.0,1,2
+developer_scimono=scimono-client=7487ec5_GroupRequestTest,scimono,developer,done,100.0,,100.0,100.0,1,2
+prompt_out_cleanup_row_013_GroupRequest_createGroup_0_2_Test,scimono,cleanup,done,100.0,,100.0,100.0,1,2
+prompt_out_cleanup_row_014_GroupRequest_createGroup_0_0_Test,scimono,cleanup,done,100.0,,100.0,100.0,1,2
+prompt_out_cleanup_row_015_GroupRequest_createGroup_0_0_Test,scimono,cleanup,done,100.0,,100.0,100.0,1,2
+prompt_out_default_row_015_GroupRequest_createGroup_0_1_Test,scimono,current,done,100.0,,100.0,100.0,1,2

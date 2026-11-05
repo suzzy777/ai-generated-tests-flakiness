@@ -1,0 +1,12 @@
+id,zip,module,focal,test,outcome
+out_cleanup_row_022,ormlitecore59309e5,.,com.j256.ormlite.table.SchemaUtils#createSchema,com.j256.ormlite.table.SchemaUtils_createSchema_3_0_Test#testCreateSchema,failed
+out_cleanup_row_022,ormlitecore59309e5,.,com.j256.ormlite.table.SchemaUtils#createSchema,com.j256.ormlite.table.SchemaUtils_createSchema_3_0_Test#testCreateSchemaWithException,failed
+out_cleanup_row_024,ormlitecore59309e5,.,com.j256.ormlite.table.SchemaUtils#createSchema,com.j256.ormlite.table.SchemaUtils_createSchema_3_4_Test#testCreateSchema,failed
+out_cleanup_row_026,shardingsphereelasticjobelasticjoblitecore4b9afa4,elastic-job-lite-core,io.elasticjob.lite.internal.instance.InstanceNode#isLocalInstancePath,io.elasticjob.lite.internal.instance.InstanceNode_isLocalInstancePath_2_0_Test#testIsLocalInstancePathFalse,failed
+out_cleanup_row_026,shardingsphereelasticjobelasticjoblitecore4b9afa4,elastic-job-lite-core,io.elasticjob.lite.internal.instance.InstanceNode#isLocalInstancePath,io.elasticjob.lite.internal.instance.InstanceNode_isLocalInstancePath_2_0_Test#testIsLocalInstancePathTrue,failed
+out_cleanup_row_028,marineapi0a1f308,.,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,net.sf.marineapi.ais.parser.AISMessage09Parser_isAccurate_3_0_Test#testIsAccurateFalse,failed
+out_cleanup_row_028,marineapi0a1f308,.,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,net.sf.marineapi.ais.parser.AISMessage09Parser_isAccurate_3_0_Test#testIsAccurateTrue,failed
+out_cleanup_row_029,marineapi0a1f308,.,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,net.sf.marineapi.ais.parser.AISMessage09Parser_isAccurate_3_0_Test#testIsAccurateFalse,failed
+out_cleanup_row_029,marineapi0a1f308,.,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,net.sf.marineapi.ais.parser.AISMessage09Parser_isAccurate_3_0_Test#testIsAccurateTrue,failed
+out_cleanup_row_030,marineapi0a1f308,.,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,net.sf.marineapi.ais.parser.AISMessage09Parser_isAccurate_3_0_Test#testIsAccurateFalse,failed
+out_cleanup_row_030,marineapi0a1f308,.,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,net.sf.marineapi.ais.parser.AISMessage09Parser_isAccurate_3_0_Test#testIsAccurateTrue,failed

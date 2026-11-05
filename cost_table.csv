@@ -1,0 +1,7 @@
+condition,runs,api_calls_per_run,input_tokens_per_run,cached_input_per_run,output_tokens_per_run,cost_total_usd,cost_per_run_usd,usable_runs,cost_per_usable_run_usd,cost_basis
+ChatUniTest default,30,11.1,13892,not recorded,6349,2.95,0.098,20,0.147,"list price, upper bound"
+ChatUniTest cleanup,30,9.9,14287,not recorded,5750,2.8,0.093,21,0.133,"list price, upper bound"
+A,30,13.7,156171,143236,4494,7.69,0.256,25,0.308,recorded (cache discount)
+F,30,13.8,165298,152576,3700,7.79,0.26,23,0.339,recorded (cache discount)
+FC,30,16.9,288706,270511,7678,13.81,0.46,22,0.628,recorded (cache discount)
+FCV,30,15.3,294068,269158,6671,13.96,0.465,21,0.665,recorded (cache discount)

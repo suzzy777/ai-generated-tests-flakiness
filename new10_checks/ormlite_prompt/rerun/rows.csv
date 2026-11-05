@@ -1,0 +1,3 @@
+id,zip,module,java,focal,mockito_fix,test_classes,build_status,status,methods,flaky_generated,flaky_other,note,log
+out_cleanup_row_023,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_1_2_Test,not_needed,no_flaky_found,1,0,,,
+out_default_row_024,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_3_0_Test,not_needed,no_flaky_found,1,0,,,

@@ -1,0 +1,5 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+cn.crane4j.core.util.ReflectUtils_getMethod_7_0_Test#testGetMethodWithEmptyParameterTypes,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.util.ReflectUtils_getMethod_7_0_Test#testGetMethodWithExistingMethod,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.util.ReflectUtils_getMethod_7_0_Test#testGetMethodWithNonExistingMethod,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.util.ReflectUtils_getMethod_7_0_Test#testGetMethodWithNullParameterTypes,testrunner,10,10,0,0,0,false,

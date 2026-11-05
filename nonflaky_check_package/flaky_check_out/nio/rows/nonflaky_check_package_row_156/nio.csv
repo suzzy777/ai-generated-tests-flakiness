@@ -1,0 +1,7 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+cn.crane4j.core.util.StringUtils_contains_2_0_Test#testContainsBothEqual,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.util.StringUtils_contains_2_0_Test#testContainsBothNull,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.util.StringUtils_contains_2_0_Test#testContainsSearchStrNull,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.util.StringUtils_contains_2_0_Test#testContainsStrNull,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.util.StringUtils_contains_2_0_Test#testContainsSubstringAbsent,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.util.StringUtils_contains_2_0_Test#testContainsSubstringPresent,testrunner,10,10,0,0,0,false,

@@ -1,0 +1,7 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+io.elasticjob.lite.internal.schedule.JobScheduleController_rescheduleJob_1_0_Test#testCreateTriggerUsingReflection,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.schedule.JobScheduleController_rescheduleJob_1_0_Test#testRescheduleJobThrowsSchedulerException,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.schedule.JobScheduleController_rescheduleJob_1_0_Test#testRescheduleJobWhenCronExpressionIsDifferent,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.schedule.JobScheduleController_rescheduleJob_1_0_Test#testRescheduleJobWhenCronExpressionIsSame,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.schedule.JobScheduleController_rescheduleJob_1_0_Test#testRescheduleJobWhenSchedulerIsShutdown,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.schedule.JobScheduleController_rescheduleJob_1_0_Test#testRescheduleJobWhenTriggerIsNull,testrunner,10,10,0,0,0,false,

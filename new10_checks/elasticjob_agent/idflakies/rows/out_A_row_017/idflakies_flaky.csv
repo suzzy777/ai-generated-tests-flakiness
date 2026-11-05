@@ -1,0 +1,2 @@
+test,type,generated,suspected_generated_polluters
+io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterModifyTest.assertPersistEphemeralSequential,OD,false,

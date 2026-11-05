@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+org.apache.camel.component.reactor.engine.ReactorStreamsService_subscriber_14_0_Test#testSubscriber,testrunner,10,10,0,0,0,false,

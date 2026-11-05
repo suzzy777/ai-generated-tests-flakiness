@@ -1,0 +1,906 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] dubbo-parent                                                       [pom]
+[INFO] dubbo-common                                                       [jar]
+[INFO] dubbo-container                                                    [pom]
+[INFO] dubbo-container-api                                                [jar]
+[INFO] dubbo-serialization                                                [pom]
+[INFO] dubbo-serialization-api                                            [jar]
+[INFO] dubbo-serialization-hessian2                                       [jar]
+[INFO] dubbo-remoting                                                     [pom]
+[INFO] dubbo-remoting-api                                                 [jar]
+[INFO] dubbo-remoting-mina                                                [jar]
+[INFO] dubbo-remoting-netty4                                              [jar]
+[INFO] dubbo-rpc                                                          [pom]
+[INFO] dubbo-rpc-api                                                      [jar]
+[INFO] dubbo-rpc-dubbo                                                    [jar]
+[INFO] dubbo-dependencies-bom                                             [pom]
+[INFO] 
+[INFO] -------------------< org.apache.dubbo:dubbo-parent >--------------------
+[INFO] Building dubbo-parent 2.7.0                                       [1/15]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-parent ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-parent ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-parent ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-parent ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-parent >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-parent ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-parent ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-parent ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-parent <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-parent ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-parent ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-parent ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-parent ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-parent/2.7.0/dubbo-parent-2.7.0.pom
+[INFO] 
+[INFO] -------------------< org.apache.dubbo:dubbo-common >--------------------
+[INFO] Building dubbo-common 2.7.0                                       [2/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-common ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-common ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-common ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ dubbo-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ dubbo-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 115 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-common/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ dubbo-common ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 25 resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ dubbo-common ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 158 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-common/target/test-classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ dubbo-common ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ dubbo-common ---
+[INFO] Building jar: ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-common/target/dubbo-common-2.7.0.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-common ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-common >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-common ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-common ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-common ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-common <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-common ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-common ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-common ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-common ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-common/target/dubbo-common-2.7.0.jar to ~/.m2/repository/org/apache/dubbo/dubbo-common/2.7.0/dubbo-common-2.7.0.jar
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-common/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-common/2.7.0/dubbo-common-2.7.0.pom
+[INFO] 
+[INFO] ------------------< org.apache.dubbo:dubbo-container >------------------
+[INFO] Building dubbo-container 2.7.0                                    [3/15]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-container ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-container ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-container ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-container ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-container ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-container >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-container ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-container ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-container ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-container <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-container ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-container ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-container ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-container ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-container/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-container/2.7.0/dubbo-container-2.7.0.pom
+[INFO] 
+[INFO] ----------------< org.apache.dubbo:dubbo-container-api >----------------
+[INFO] Building dubbo-container-api 2.7.0                                [4/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-container-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-container-api ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-container-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-container-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ dubbo-container-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ dubbo-container-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-container/dubbo-container-api/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ dubbo-container-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-container/dubbo-container-api/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ dubbo-container-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ dubbo-container-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ dubbo-container-api ---
+[INFO] Building jar: ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-container/dubbo-container-api/target/dubbo-container-api-2.7.0.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-container-api ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-container-api >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-container-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-container-api ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-container-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-container-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-container-api ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-container-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-container-api ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-container-api ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-container/dubbo-container-api/target/dubbo-container-api-2.7.0.jar to ~/.m2/repository/org/apache/dubbo/dubbo-container-api/2.7.0/dubbo-container-api-2.7.0.jar
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-container/dubbo-container-api/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-container-api/2.7.0/dubbo-container-api-2.7.0.pom
+[INFO] 
+[INFO] ----------------< org.apache.dubbo:dubbo-serialization >----------------
+[INFO] Building dubbo-serialization 2.7.0                                [5/15]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-serialization ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-serialization ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-serialization ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-serialization ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-serialization ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-serialization >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-serialization ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-serialization ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-serialization ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-serialization <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-serialization ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-serialization ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-serialization ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-serialization ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-serialization/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-serialization/2.7.0/dubbo-serialization-2.7.0.pom
+[INFO] 
+[INFO] --------------< org.apache.dubbo:dubbo-serialization-api >--------------
+[INFO] Building dubbo-serialization-api 2.7.0                            [6/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-serialization-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-serialization-api ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-serialization-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-serialization-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ dubbo-serialization-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-serialization/dubbo-serialization-api/src/main/resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ dubbo-serialization-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-serialization/dubbo-serialization-api/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ dubbo-serialization-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-serialization/dubbo-serialization-api/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ dubbo-serialization-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ dubbo-serialization-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ dubbo-serialization-api ---
+[INFO] Building jar: ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-serialization/dubbo-serialization-api/target/dubbo-serialization-api-2.7.0.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-serialization-api ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-serialization-api >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-serialization-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-serialization-api ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-serialization-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-serialization-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-serialization-api ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-serialization-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-serialization-api ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-serialization-api ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-serialization/dubbo-serialization-api/target/dubbo-serialization-api-2.7.0.jar to ~/.m2/repository/org/apache/dubbo/dubbo-serialization-api/2.7.0/dubbo-serialization-api-2.7.0.jar
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-serialization/dubbo-serialization-api/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-serialization-api/2.7.0/dubbo-serialization-api-2.7.0.pom
+[INFO] 
+[INFO] -----------< org.apache.dubbo:dubbo-serialization-hessian2 >------------
+[INFO] Building dubbo-serialization-hessian2 2.7.0                       [7/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-serialization-hessian2 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-serialization-hessian2 ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-serialization-hessian2 ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-serialization-hessian2 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ dubbo-serialization-hessian2 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ dubbo-serialization-hessian2 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-serialization/dubbo-serialization-hessian2/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ dubbo-serialization-hessian2 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-serialization/dubbo-serialization-hessian2/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ dubbo-serialization-hessian2 ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ dubbo-serialization-hessian2 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ dubbo-serialization-hessian2 ---
+[INFO] Building jar: ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-serialization/dubbo-serialization-hessian2/target/dubbo-serialization-hessian2-2.7.0.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-serialization-hessian2 ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-serialization-hessian2 >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-serialization-hessian2 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-serialization-hessian2 ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-serialization-hessian2 ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-serialization-hessian2 <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-serialization-hessian2 ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-serialization-hessian2 ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-serialization-hessian2 ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-serialization-hessian2 ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-serialization/dubbo-serialization-hessian2/target/dubbo-serialization-hessian2-2.7.0.jar to ~/.m2/repository/org/apache/dubbo/dubbo-serialization-hessian2/2.7.0/dubbo-serialization-hessian2-2.7.0.jar
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-serialization/dubbo-serialization-hessian2/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-serialization-hessian2/2.7.0/dubbo-serialization-hessian2-2.7.0.pom
+[INFO] 
+[INFO] ------------------< org.apache.dubbo:dubbo-remoting >-------------------
+[INFO] Building dubbo-remoting 2.7.0                                     [8/15]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-remoting ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-remoting ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-remoting ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-remoting ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-remoting ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-remoting >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-remoting ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-remoting ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-remoting ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-remoting <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-remoting ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-remoting ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-remoting ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-remoting ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-remoting/2.7.0/dubbo-remoting-2.7.0.pom
+[INFO] 
+[INFO] ----------------< org.apache.dubbo:dubbo-remoting-api >-----------------
+[INFO] Building dubbo-remoting-api 2.7.0                                 [9/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-remoting-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-remoting-api ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-remoting-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-remoting-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ dubbo-remoting-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ dubbo-remoting-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 94 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-api/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ dubbo-remoting-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ dubbo-remoting-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 37 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-api/target/test-classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ dubbo-remoting-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ dubbo-remoting-api ---
+[INFO] Building jar: ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-api/target/dubbo-remoting-api-2.7.0.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-remoting-api ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-remoting-api >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-remoting-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-remoting-api ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-remoting-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-remoting-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-remoting-api ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-remoting-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-remoting-api ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-remoting-api ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-api/target/dubbo-remoting-api-2.7.0.jar to ~/.m2/repository/org/apache/dubbo/dubbo-remoting-api/2.7.0/dubbo-remoting-api-2.7.0.jar
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-api/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-remoting-api/2.7.0/dubbo-remoting-api-2.7.0.pom
+[INFO] 
+[INFO] ----------------< org.apache.dubbo:dubbo-remoting-mina >----------------
+[INFO] Building dubbo-remoting-mina 2.7.0                               [10/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-remoting-mina ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-remoting-mina ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-remoting-mina ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-remoting-mina ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ dubbo-remoting-mina ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ dubbo-remoting-mina ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-mina/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ dubbo-remoting-mina ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-mina/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ dubbo-remoting-mina ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 6 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-mina/target/test-classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ dubbo-remoting-mina ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ dubbo-remoting-mina ---
+[INFO] Building jar: ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-mina/target/dubbo-remoting-mina-2.7.0.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-remoting-mina ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-remoting-mina >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-remoting-mina ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-remoting-mina ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-remoting-mina ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-remoting-mina <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-remoting-mina ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-remoting-mina ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-remoting-mina ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-remoting-mina ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-mina/target/dubbo-remoting-mina-2.7.0.jar to ~/.m2/repository/org/apache/dubbo/dubbo-remoting-mina/2.7.0/dubbo-remoting-mina-2.7.0.jar
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-mina/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-remoting-mina/2.7.0/dubbo-remoting-mina-2.7.0.pom
+[INFO] 
+[INFO] ---------------< org.apache.dubbo:dubbo-remoting-netty4 >---------------
+[INFO] Building dubbo-remoting-netty4 2.7.0                             [11/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-remoting-netty4 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-remoting-netty4 ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-remoting-netty4 ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-remoting-netty4 ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ dubbo-remoting-netty4 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ dubbo-remoting-netty4 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 10 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-netty4/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ dubbo-remoting-netty4 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-netty4/src/test/resources
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ dubbo-remoting-netty4 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-netty4/target/test-classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ dubbo-remoting-netty4 ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ dubbo-remoting-netty4 ---
+[INFO] Building jar: ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-netty4/target/dubbo-remoting-netty4-2.7.0.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-remoting-netty4 ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-remoting-netty4 >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-remoting-netty4 ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-remoting-netty4 ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-remoting-netty4 ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-remoting-netty4 <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-remoting-netty4 ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-remoting-netty4 ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-remoting-netty4 ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-remoting-netty4 ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-netty4/target/dubbo-remoting-netty4-2.7.0.jar to ~/.m2/repository/org/apache/dubbo/dubbo-remoting-netty4/2.7.0/dubbo-remoting-netty4-2.7.0.jar
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-remoting/dubbo-remoting-netty4/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-remoting-netty4/2.7.0/dubbo-remoting-netty4-2.7.0.pom
+[INFO] 
+[INFO] ---------------------< org.apache.dubbo:dubbo-rpc >---------------------
+[INFO] Building dubbo-rpc 2.7.0                                         [12/15]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-rpc ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-rpc ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-rpc ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-rpc >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-rpc ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-rpc <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-rpc ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-rpc ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-rpc ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-rpc ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-rpc/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-rpc/2.7.0/dubbo-rpc-2.7.0.pom
+[INFO] 
+[INFO] -------------------< org.apache.dubbo:dubbo-rpc-api >-------------------
+[INFO] Building dubbo-rpc-api 2.7.0                                     [13/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-rpc-api ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-rpc-api ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ dubbo-rpc-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 4 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ dubbo-rpc-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 73 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-rpc/dubbo-rpc-api/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ dubbo-rpc-api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-api ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 40 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-rpc/dubbo-rpc-api/target/test-classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ dubbo-rpc-api ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ dubbo-rpc-api ---
+[INFO] Building jar: ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-rpc/dubbo-rpc-api/target/dubbo-rpc-api-2.7.0.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-rpc-api ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-rpc-api >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-api ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-rpc-api ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-rpc-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-rpc-api ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-rpc-api ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-rpc-api ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-rpc-api ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-rpc/dubbo-rpc-api/target/dubbo-rpc-api-2.7.0.jar to ~/.m2/repository/org/apache/dubbo/dubbo-rpc-api/2.7.0/dubbo-rpc-api-2.7.0.jar
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-rpc/dubbo-rpc-api/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-rpc-api/2.7.0/dubbo-rpc-api-2.7.0.pom
+[INFO] 
+[INFO] ------------------< org.apache.dubbo:dubbo-rpc-dubbo >------------------
+[INFO] Building dubbo-rpc-dubbo 2.7.0                                   [14/15]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-dubbo ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-dubbo ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] jacocoArgLine set to empty
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ dubbo-rpc-dubbo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 2 resources to META-INF/
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:compile (default-compile) @ dubbo-rpc-dubbo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 24 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-rpc/dubbo-rpc-dubbo/target/classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ dubbo-rpc-dubbo ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.0:testCompile (default-testCompile) @ dubbo-rpc-dubbo ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 27 source files to ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-rpc/dubbo-rpc-dubbo/target/test-classes
+[WARNING] Unable to autodetect 'javac' path, using 'javac' from the environment.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ dubbo-rpc-dubbo ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ dubbo-rpc-dubbo ---
+[INFO] Building jar: ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-rpc/dubbo-rpc-dubbo/target/dubbo-rpc-dubbo-2.7.0.jar
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-rpc-dubbo ---
+[INFO] Skipping because packaging 'jar' is not pom.
+[INFO] 
+[INFO] >>> maven-source-plugin:3.0.1:jar (attach-sources) > generate-sources @ dubbo-rpc-dubbo >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-rpc-dubbo ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-validation) @ dubbo-rpc-dubbo ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:prepare-agent (jacoco-initialize) @ dubbo-rpc-dubbo ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] <<< maven-source-plugin:3.0.1:jar (attach-sources) < generate-sources @ dubbo-rpc-dubbo <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-source-plugin:3.0.1:jar (attach-sources) @ dubbo-rpc-dubbo ---
+[INFO] Skipping source per configuration.
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.8.2:report-aggregate (report-aggregate) @ dubbo-rpc-dubbo ---
+[INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+[INFO] 
+[INFO] --- apache-rat-plugin:0.12:check (verify.rat) @ dubbo-rpc-dubbo ---
+[INFO] RAT will not execute since it is configured to be skipped via system property 'rat.skip'.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-rpc-dubbo ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-rpc/dubbo-rpc-dubbo/target/dubbo-rpc-dubbo-2.7.0.jar to ~/.m2/repository/org/apache/dubbo/dubbo-rpc-dubbo/2.7.0/dubbo-rpc-dubbo-2.7.0.jar
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-rpc/dubbo-rpc-dubbo/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-rpc-dubbo/2.7.0/dubbo-rpc-dubbo-2.7.0.pom
+[INFO] 
+[INFO] --------------< org.apache.dubbo:dubbo-dependencies-bom >---------------
+[INFO] Building dubbo-dependencies-bom 2.7.0                            [15/15]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-version) @ dubbo-dependencies-bom ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ dubbo-dependencies-bom ---
+[INFO] 
+[INFO] --- maven-site-plugin:3.7:attach-descriptor (attach-descriptor) @ dubbo-dependencies-bom ---
+[INFO] No site descriptor found: nothing to attach.
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ dubbo-dependencies-bom ---
+[INFO] Installing ./agent_experiment/work/FCV_row_005/dubbodubborpcdubborpcdubbo628ad77/Flaky/dubbo-dependencies-bom/pom.xml to ~/.m2/repository/org/apache/dubbo/dubbo-dependencies-bom/2.7.0/dubbo-dependencies-bom-2.7.0.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for dubbo-parent 2.7.0:
+[INFO] 
+[INFO] dubbo-parent ....................................... SUCCESS [  2.719 s]
+[INFO] dubbo-common ....................................... SUCCESS [  9.328 s]
+[INFO] dubbo-container .................................... SUCCESS [  0.026 s]
+[INFO] dubbo-container-api ................................ SUCCESS [  1.180 s]
+[INFO] dubbo-serialization ................................ SUCCESS [  0.024 s]
+[INFO] dubbo-serialization-api ............................ SUCCESS [  1.621 s]
+[INFO] dubbo-serialization-hessian2 ....................... SUCCESS [  1.619 s]
+[INFO] dubbo-remoting ..................................... SUCCESS [  0.055 s]
+[INFO] dubbo-remoting-api ................................. SUCCESS [  4.957 s]
+[INFO] dubbo-remoting-mina ................................ SUCCESS [  3.017 s]
+[INFO] dubbo-remoting-netty4 .............................. SUCCESS [  3.267 s]
+[INFO] dubbo-rpc .......................................... SUCCESS [  0.019 s]
+[INFO] dubbo-rpc-api ...................................... SUCCESS [  5.125 s]
+[INFO] dubbo-rpc-dubbo .................................... SUCCESS [  4.935 s]
+[INFO] dubbo-dependencies-bom ............................. SUCCESS [  0.018 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  38.578 s
+[INFO] Finished at: 2026-10-30T22:33:30-04:00
+[INFO] ------------------------------------------------------------------------

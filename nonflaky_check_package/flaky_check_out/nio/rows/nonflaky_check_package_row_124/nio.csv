@@ -1,0 +1,4 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.intuit.karate.formats.PostmanConverter_convert_0_0_Test#testConvertFileDoesNotExist,own_junit5_runner,10,10,0,0,0,false,
+com.intuit.karate.formats.PostmanConverter_convert_0_0_Test#testConvertSuccess,own_junit5_runner,10,0,0,10,0,inconclusive,ERROR;ERROR
+com.intuit.karate.formats.PostmanConverter_convert_0_0_Test#testConvertWithEmptyJson,own_junit5_runner,10,0,0,10,0,inconclusive,ERROR;ERROR

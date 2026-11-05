@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenter_persistEphemeralSequential_13_1_Test#testPersistEphemeralSequential,testrunner,100,100,0,0,0,false,

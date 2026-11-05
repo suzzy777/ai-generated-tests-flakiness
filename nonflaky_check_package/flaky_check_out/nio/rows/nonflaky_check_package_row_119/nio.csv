@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.intuit.karate.XmlUtils_setByPath_12_0_Test#testSetByPath,own_junit5_runner,10,10,0,0,0,false,

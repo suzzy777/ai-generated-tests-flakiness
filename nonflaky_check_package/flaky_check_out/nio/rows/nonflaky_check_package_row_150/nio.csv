@@ -1,0 +1,4 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+cn.crane4j.core.util.ArrayUtils_length_9_0_Test#testLengthWithEmptyArray,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.util.ArrayUtils_length_9_0_Test#testLengthWithNonEmptyArray,testrunner,10,10,0,0,0,false,
+cn.crane4j.core.util.ArrayUtils_length_9_0_Test#testLengthWithNullArray,testrunner,10,10,0,0,0,false,

@@ -1,0 +1,84 @@
+agent:
+  system_template: |
+    {{chatunitest_system}}
+    {%- if condition in ("FC", "FCV") %}
+    {%- set before, after = ("@Before", "@After") if junit == "JUnit 4" else ("@BeforeEach", "@AfterEach") %}
+    The tests may run in any order together with the project's other tests in the same JVM, so they must not change state that other tests see: if a test changes a static field, a singleton (e.g. an object returned by getInstance()), a system property, or any field set by reflection, save the original value before changing it (in {{before}}) and restore it in an {{after}} method.
+    {%- endif %}
+    {%- if condition == "FCV" %}
+    Each test must pass no matter which tests ran before it: do not assume that shared state (static fields, singletons, system properties) is in its default state; set up the state your test needs in {{before}}.
+    {%- endif %}
+
+    You can run bash commands with the bash tool, in the project's repository.
+  instance_template: |
+    {{chatunitest_user}}
+
+    ## How to work
+
+    You are in the project's repository: {{project_root}} (JDK {{java}}, Maven offline).
+    Every bash command runs in a new shell starting in that directory. You can read any file of the
+    project (e.g. with cat, sed -n, grep) to find what you need.
+    {%- if condition == "T" %}
+
+    Before writing your test, read the project's existing tests for this class:
+    {{existing_test}}
+    Your test class will be added to the project's test suite next to them.
+    {%- endif %}
+    {%- set n = 1 if condition in ("F", "N", "FC", "FCV") else 0 %}
+    {% if condition in ("F", "N", "FC", "FCV") %}
+    1. Read the project's existing tests first. They are in {{test_dir}}; read the ones you need.
+    {%- if condition in ("F", "FC", "FCV") %}
+       Your test class will be added to the project's test suite next to them.
+    {%- endif %}
+    {%- endif %}
+    {{1 + n}}. Write the {{junit}} test class `{{test_class}}` (package `{{package}}`) to
+       {{test_path}}
+       Do not change any other file of the project.
+    {%- if condition != "A" %}
+       Text in your reply is not saved: write the test file with a bash command (e.g. `cat > {{test_path}} << 'EOF'`).
+    {%- endif %}
+    {{2 + n}}. Compile and run it with:
+       {{test_cmd}}
+    {%- if condition in ("A", "T", "F", "N", "FC", "FCV") %}
+       Run only your own test class.
+    {%- else %}
+       You can also run the module's whole test suite with:
+       {{suite_cmd}}
+    {%- endif %}
+    {{3 + n}}. Fix it until it compiles and its tests pass.
+    {%- if condition in ("FC", "FCV") %}
+       If the test changes a static field, a singleton or a field set by reflection, save the original value and restore it in an {{"@After" if junit == "JUnit 4" else "@AfterEach"}} method.
+    {%- endif %}
+    {{4 + n}}. Then finish by running `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT` as its own command.
+  step_limit: 40
+  cost_limit: 3.0
+  wall_time_limit_seconds: 3600
+model:
+  model_name: openai/gpt-4o
+  model_kwargs:
+    drop_params: true
+    temperature: 0.5
+  observation_template: |
+    {% if output.exception_info -%}
+    <exception>{{output.exception_info}}</exception>
+    {% endif -%}
+    <returncode>{{output.returncode}}</returncode>
+    {% if output.output | length < 10000 -%}
+    <output>
+    {{ output.output -}}
+    </output>
+    {%- else -%}
+    <warning>The output was too long; showing the first and last 5000 characters.</warning>
+    <output_head>
+    {{ output.output[:5000] }}
+    </output_head>
+    <output_tail>
+    {{ output.output[-5000:] }}
+    </output_tail>
+    {%- endif -%}
+environment:
+  timeout: 1800
+  env:
+    PAGER: cat
+    MANPAGER: cat
+    LESS: -R

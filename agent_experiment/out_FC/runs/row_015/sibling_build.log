@@ -1,0 +1,96 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] SAP SCIMono Library                                                [pom]
+[INFO] scimono-server                                                     [jar]
+[INFO] scimono-client                                                     [jar]
+[INFO] 
+[INFO] -------------------< com.sap.scimono:scimono-parent >-------------------
+[INFO] Building SAP SCIMono Library 0.0.30-SNAPSHOT                       [1/3]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ scimono-parent ---
+[INFO] Installing ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/pom.xml to ~/.m2/repository/com/sap/scimono/scimono-parent/0.0.30-SNAPSHOT/scimono-parent-0.0.30-SNAPSHOT.pom
+[INFO] 
+[INFO] -------------------< com.sap.scimono:scimono-server >-------------------
+[INFO] Building scimono-server 0.0.30-SNAPSHOT                            [2/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- antlr4-maven-plugin:4.9:antlr4 (antlr) @ scimono-server ---
+[INFO] No grammars to process
+[INFO] ANTLR 4: Processing source directory ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-server/src/main/antlr4
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ scimono-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ scimono-server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 157 source files to ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-server/target/classes
+[WARNING] ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-server/src/main/java/com/sap/scimono/helper/Objects.java: Some input files use unchecked or unsafe operations.
+[WARNING] ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-server/src/main/java/com/sap/scimono/helper/Objects.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ scimono-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-server/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ scimono-server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-server/target/test-classes
+[WARNING] ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-server/src/test/java/com/sap/scimono/helper/ReadOnlyAttributesEraserTest.java: Some input files use or override a deprecated API.
+[WARNING] ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-server/src/test/java/com/sap/scimono/helper/ReadOnlyAttributesEraserTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ scimono-server ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ scimono-server ---
+[INFO] Building jar: ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-server/target/scimono-server-0.0.30-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ scimono-server ---
+[INFO] Installing ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-server/target/scimono-server-0.0.30-SNAPSHOT.jar to ~/.m2/repository/com/sap/scimono/scimono-server/0.0.30-SNAPSHOT/scimono-server-0.0.30-SNAPSHOT.jar
+[INFO] Installing ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-server/pom.xml to ~/.m2/repository/com/sap/scimono/scimono-server/0.0.30-SNAPSHOT/scimono-server-0.0.30-SNAPSHOT.pom
+[INFO] 
+[INFO] -------------------< com.sap.scimono:scimono-client >-------------------
+[INFO] Building scimono-client 0.0.30-SNAPSHOT                            [3/3]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ scimono-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-client/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ scimono-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 32 source files to ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-client/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ scimono-client ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 19 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ scimono-client ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 13 source files to ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-client/target/test-classes
+[WARNING] ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-client/src/test/java/com/sap/scimono/client/SCIMResourceRequestInvocationTest.java: Some input files use or override a deprecated API.
+[WARNING] ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-client/src/test/java/com/sap/scimono/client/SCIMResourceRequestInvocationTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ scimono-client ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ scimono-client ---
+[INFO] Building jar: ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-client/target/scimono-client-0.0.30-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ scimono-client ---
+[INFO] Installing ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-client/target/scimono-client-0.0.30-SNAPSHOT.jar to ~/.m2/repository/com/sap/scimono/scimono-client/0.0.30-SNAPSHOT/scimono-client-0.0.30-SNAPSHOT.jar
+[INFO] Installing ./agent_experiment/work/FC_row_015/scimono=scimono-client=7487ec5/Flaky/scimono-client/pom.xml to ~/.m2/repository/com/sap/scimono/scimono-client/0.0.30-SNAPSHOT/scimono-client-0.0.30-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for SAP SCIMono Library 0.0.30-SNAPSHOT:
+[INFO] 
+[INFO] SAP SCIMono Library ................................ SUCCESS [  0.168 s]
+[INFO] scimono-server ..................................... SUCCESS [  2.751 s]
+[INFO] scimono-client ..................................... SUCCESS [  1.039 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.082 s
+[INFO] Finished at: 2026-10-29T16:59:22-04:00
+[INFO] ------------------------------------------------------------------------

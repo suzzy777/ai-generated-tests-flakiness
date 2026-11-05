@@ -1,0 +1,19 @@
+Broken agent test files in this folder: do NOT include them in flaky checks (13 files, 21 methods).
+Every method fails or does not compile in every one of 100 reruns alone, and the agent's own last test run
+(trajectory) failed the same way: they never worked. Same rule as rows 1-15: always fails alone = broken,
+dropped; fails only some runs = flaky, kept. 12 of 13 come from agent runs that hit the 40-step limit.
+ChatUniTest folders (prompt_default, prompt_cleanup) are already filtered (replay); nothing to drop there.
+
+agent_A/row_016/JobRegistry_shutdown_0_0_Test.java   (shardingsphere-elasticjob, compile error (agent's own run: BUILD FAILURE))
+agent_A/row_022/SchemaUtils_createSchema_0_0_Test.java   (ormlite-core, compile error, cannot find symbol)
+agent_F/row_023/SchemaUtils_createSchema_0_0_Test.java   (ormlite-core, compile error)
+agent_F/row_024/SchemaUtils_createSchema_0_0_Test.java   (ormlite-core, NullPointerException)
+agent_F/row_028/AISMessage09Parser_isAccurate_0_0_Test.java   (marine-api, Wrong message length)
+agent_FC/row_022/SchemaUtils_createSchema_0_0_Test.java   (ormlite-core, compile error)
+agent_FC/row_024/SchemaUtils_createSchema_0_0_Test.java   (ormlite-core, compile error)
+agent_FC/row_028/AISMessage09Parser_isAccurate_0_0_Test.java   (marine-api, Sixbit decoder is empty! (agent submitted anyway))
+agent_FC/row_029/AISMessage09Parser_isAccurate_0_0_Test.java   (marine-api, Wrong message length)
+agent_FC/row_030/AISMessage09Parser_isAccurate_0_0_Test.java   (marine-api, Wrong message length)
+agent_FCV/row_022/SchemaUtils_createSchema_0_0_Test.java   (ormlite-core, compile error)
+agent_FCV/row_023/SchemaUtils_createSchema_0_0_Test.java   (ormlite-core, NullPointerException)
+agent_FCV/row_024/SchemaUtils_createSchema_0_0_Test.java   (ormlite-core, compile error)

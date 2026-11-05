@@ -1,0 +1,3 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+net.sf.marineapi.ais.parser.AISMessage09Parser_isAccurate_0_0_Test#testIsAccurateFalse,testrunner,100,0,0,100,0,inconclusive,ERROR;ERROR
+net.sf.marineapi.ais.parser.AISMessage09Parser_isAccurate_0_0_Test#testIsAccurateTrue,testrunner,100,0,0,100,0,inconclusive,ERROR;ERROR

@@ -1,0 +1,162 @@
+diff --git a/flakesync-core/src/main/java/edu/utexas/ece/flakesync/agent/Agent.java b/flakesync-core/src/main/java/edu/utexas/ece/flakesync/agent/Agent.java
+index 6674719..52ec9bd 100755
+--- a/flakesync-core/src/main/java/edu/utexas/ece/flakesync/agent/Agent.java
++++ b/flakesync-core/src/main/java/edu/utexas/ece/flakesync/agent/Agent.java
+@@ -166,7 +166,9 @@ public class Agent {
+                 className = className.replaceAll("[/]", ".");
+ 
+                 final ClassReader reader = new ClassReader(bytes);
+-                final ClassWriter writer = new ClassWriter(reader, ClassWriter.COMPUTE_FRAMES | ClassWriter.COMPUTE_MAXS);
++                // SafeClassWriter: finds common superclasses without loading classes (avoids LinkageError)
++                final ClassWriter writer = new SafeClassWriter(reader,
++                    ClassWriter.COMPUTE_FRAMES | ClassWriter.COMPUTE_MAXS, classLoader);
+ 
+                 // Set up delay
+                 delay = System.getProperty("delay");
+diff --git a/flakesync-core/src/main/java/edu/utexas/ece/flakesync/agent/SafeClassWriter.java b/flakesync-core/src/main/java/edu/utexas/ece/flakesync/agent/SafeClassWriter.java
+new file mode 100644
+index 0000000..3ee198f
+--- /dev/null
++++ b/flakesync-core/src/main/java/edu/utexas/ece/flakesync/agent/SafeClassWriter.java
+@@ -0,0 +1,128 @@
++package edu.utexas.ece.flakesync.agent;
++
++import org.objectweb.asm.ClassReader;
++import org.objectweb.asm.ClassWriter;
++import org.objectweb.asm.Opcodes;
++
++import java.io.IOException;
++import java.io.InputStream;
++import java.util.ArrayDeque;
++import java.util.Deque;
++import java.util.HashMap;
++import java.util.HashSet;
++import java.util.Map;
++import java.util.Set;
++
++/**
++ * A ClassWriter that finds common superclasses by reading class files, never by loading classes.
++ *
++ * <p>The default ClassWriter.getCommonSuperClass calls Class.forName. If one of the two types is the class that
++ * is being transformed right now, that loads (and so defines) the class a second time while its first definition
++ * is still in progress, and the JVM fails with "LinkageError: attempted duplicate class definition".
++ * Reading the class bytes from the class loader's resources avoids that, and gives the same answer.
++ * If a class file cannot be found, a TypeNotPresentException is thrown, as ASM does; the JVM then simply
++ * loads that one class without instrumentation.
++ */
++public class SafeClassWriter extends ClassWriter {
++
++    private static final String OBJECT = "java/lang/Object";
++
++    private final ClassLoader loader;
++    private final Map<String, Info> infos = new HashMap<>();
++    private final Map<String, Set<String>> ancestorSets = new HashMap<>();
++
++    public SafeClassWriter(ClassReader reader, int flags, ClassLoader loader) {
++        super(reader, flags);
++        this.loader = loader;
++    }
++
++    @Override
++    protected String getCommonSuperClass(String type1, String type2) {
++        if (type1.equals(type2)) {
++            return type1;
++        }
++        if (ancestors(type2).contains(type1)) {
++            return type1;
++        }
++        if (ancestors(type1).contains(type2)) {
++            return type2;
++        }
++        if (info(type1).isInterface || info(type2).isInterface) {
++            return OBJECT;
++        }
++        String current = type1;
++        do {
++            current = info(current).superName;
++        } while (current != null && !ancestors(type2).contains(current));
++        return current == null ? OBJECT : current;
++    }
++
++    // The type itself plus all its superclasses and interfaces, direct or indirect.
++    private Set<String> ancestors(String type) {
++        Set<String> found = ancestorSets.get(type);
++        if (found == null) {
++            found = new HashSet<>();
++            Deque<String> todo = new ArrayDeque<>();
++            todo.push(type);
++            while (!todo.isEmpty()) {
++                String next = todo.pop();
++                if (found.add(next)) {
++                    Info nextInfo = info(next);
++                    if (nextInfo.superName != null) {
++                        todo.push(nextInfo.superName);
++                    }
++                    for (String itf : nextInfo.interfaces) {
++                        todo.push(itf);
++                    }
++                }
++            }
++            ancestorSets.put(type, found);
++        }
++        return found;
++    }
++
++    private Info info(String type) {
++        Info known = infos.get(type);
++        if (known == null) {
++            known = readInfo(type);
++            infos.put(type, known);
++        }
++        return known;
++    }
++
++    private Info readInfo(String type) {
++        try (InputStream in = open(type + ".class")) {
++            if (in == null) {
++                throw new TypeNotPresentException(type.replace('/', '.'), null);
++            }
++            ClassReader classReader = new ClassReader(in);
++            return new Info(classReader.getSuperName(), classReader.getInterfaces(),
++                (classReader.getAccess() & Opcodes.ACC_INTERFACE) != 0);
++        } catch (IOException ioe) {
++            throw new TypeNotPresentException(type.replace('/', '.'), ioe);
++        }
++    }
++
++    private InputStream open(String resource) {
++        InputStream in = null;
++        if (loader != null) {
++            in = loader.getResourceAsStream(resource);
++        }
++        if (in == null) {
++            in = ClassLoader.getSystemResourceAsStream(resource);
++        }
++        return in;
++    }
++
++    private static final class Info {
++        private final String superName;
++        private final String[] interfaces;
++        private final boolean isInterface;
++
++        private Info(String superName, String[] interfaces, boolean isInterface) {
++            this.superName = superName;
++            this.interfaces = interfaces;
++            this.isInterface = isInterface;
++        }
++    }
++}
+diff --git a/flakesync-core/src/main/resources/blacklist.txt b/flakesync-core/src/main/resources/blacklist.txt
+index 62b39e8..e3ce44b 100644
+--- a/flakesync-core/src/main/resources/blacklist.txt
++++ b/flakesync-core/src/main/resources/blacklist.txt
+@@ -189,4 +189,6 @@ org.apache.cassandra.db.RowPosition
+ edu.stanford.ppl.concurrent.EpochNode
+ com.datastax.driver.core.TypeCodec
+ edu.utexas.ece.flakesync.agent.Utility
+-org.hsqldb
+\ No newline at end of file
++org.hsqldb
++org.apache.camel.util.jndi.JndiContext
++reactor.

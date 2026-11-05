@@ -1,0 +1,12 @@
+id,zip,module,java,focal,mockito_fix,test_classes,build_status,status,methods,flaky_generated,flaky_other,note,log
+out_A_row_028,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_0_0_Test,not_needed,no_flaky_found,2,0,,,
+out_A_row_029,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_0_0_Test,not_needed,no_flaky_found,1,0,,,
+out_FCV_row_028,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_0_0_Test,not_needed,no_flaky_found,2,0,,,
+out_FCV_row_029,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_0_0_Test,not_needed,no_flaky_found,2,0,,,
+out_FCV_row_030,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_0_0_Test,not_needed,no_flaky_found,2,0,,,
+out_FC_row_028,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_0_0_Test,not_needed,always_failed,2,0,,,
+out_FC_row_029,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_0_0_Test,not_needed,always_failed,2,0,,,
+out_FC_row_030,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_0_0_Test,not_needed,always_failed,2,0,,,
+out_F_row_028,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_0_0_Test,not_needed,always_failed,2,0,,,
+out_F_row_029,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_0_0_Test,not_needed,no_flaky_found,1,0,,,
+out_F_row_030,marineapi0a1f308,.,8,net.sf.marineapi.ais.parser.AISMessage09Parser#isAccurate,false,AISMessage09Parser_isAccurate_0_0_Test,not_needed,no_flaky_found,2,0,,,

@@ -1,0 +1,8 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+cn.crane4j.core.util.ObjectUtils_get_2_0_Test#testGetWithArray,testrunner,100,100,0,0,0,false,
+cn.crane4j.core.util.ObjectUtils_get_2_0_Test#testGetWithIterable,testrunner,100,100,0,0,0,false,
+cn.crane4j.core.util.ObjectUtils_get_2_0_Test#testGetWithIterator,testrunner,100,100,0,0,0,false,
+cn.crane4j.core.util.ObjectUtils_get_2_0_Test#testGetWithList,testrunner,100,100,0,0,0,false,
+cn.crane4j.core.util.ObjectUtils_get_2_0_Test#testGetWithMap,testrunner,100,100,0,0,0,false,
+cn.crane4j.core.util.ObjectUtils_get_2_0_Test#testGetWithNullTarget,testrunner,100,100,0,0,0,false,
+cn.crane4j.core.util.ObjectUtils_get_2_0_Test#testGetWithUnsupportedType,testrunner,100,100,0,0,0,false,

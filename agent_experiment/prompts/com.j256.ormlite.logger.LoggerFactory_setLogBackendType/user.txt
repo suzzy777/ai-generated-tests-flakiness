@@ -1,0 +1,44 @@
+The focal method is `setLogBackendType(LogBackendType)` in the focal class `LoggerFactory`,
+Information of the focal method is
+```com.j256.ormlite.logger
+import java.util.Arrays;
+import com.j256.ormlite.logger.backend.NullLogBackend.NullLogBackendFactory;
+public class LoggerFactory {
+private static LogBackendFactory logBackendFactory;
+public static void setLogBackendType(LogBackendType type) {
+		if (type.isAvailable()) {
+			LoggerFactory.logBackendFactory = type;
+		} else {
+			throw new IllegalArgumentException("Logging backend type " + type + " is not available on the classpath");
+		}
+	}
+}```.
+
+    Signatures of Other methods in the focal class are `private LoggerFactory(){}
+public static LogBackendFactory getLogBackendFactory(){}
+public static void setLogBackendFactory(LogBackendFactory LogBackendFactory){}
+public static void setLogBackendType(LogBackendType type){}
+
+`.
+    The brief information of dependent class `com.j256.ormlite.logger.LogBackendType` is
+    ```com.j256.ormlite.logger
+import com.j256.ormlite.logger.backend.ConsoleLogBackend.ConsoleLogBackendFactory;
+import com.j256.ormlite.logger.backend.LocalLogBackend.LocalLogBackendFactory;
+import com.j256.ormlite.logger.backend.NullLogBackend.NullLogBackendFactory;
+public enum LogBackendType {
+private final LogBackendFactory factory;
+
+@Override
+	public boolean isAvailable() {
+		if (this == LogBackendType.LOCAL) {
+			// always available
+			return true;
+		} else if (this == LogBackendType.NULL || !this.factory.isAvailable()) {
+			// LogBackendType.NULL is never available or check the factory availability method
+			return false;
+		} else {
+			// we might have defaulted to using the local-log backend if it was not available
+			return !(factory instanceof LocalLogBackendFactory);
+		}
+	}
+}```.

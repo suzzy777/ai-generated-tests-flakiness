@@ -1,0 +1,76 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] elastic-job-lite                                                   [pom]
+[INFO] elastic-job-lite-core                                              [jar]
+[INFO] 
+[INFO] -------------------< io.elasticjob:elastic-job-lite >-------------------
+[INFO] Building elastic-job-lite 3.0.0.M1-SNAPSHOT                        [1/2]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-banned-dependencies) @ elastic-job-lite ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (validate) @ elastic-job-lite ---
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.3:jar (attach-javadocs) @ elastic-job-lite ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- maven-source-plugin:2.4:jar-no-fork (attach-sources) @ elastic-job-lite ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ elastic-job-lite ---
+[INFO] Installing ./agent_experiment/work/F_row_018/elasticjobf0d/Flaky/pom.xml to ~/.m2/repository/io/elasticjob/elastic-job-lite/3.0.0.M1-SNAPSHOT/elastic-job-lite-3.0.0.M1-SNAPSHOT.pom
+[INFO] 
+[INFO] ----------------< io.elasticjob:elastic-job-lite-core >-----------------
+[INFO] Building elastic-job-lite-core 3.0.0.M1-SNAPSHOT                   [2/2]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-banned-dependencies) @ elastic-job-lite-core ---
+[INFO] Skipping Rule Enforcement.
+[INFO] 
+[INFO] --- maven-checkstyle-plugin:3.1.0:check (validate) @ elastic-job-lite-core ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ elastic-job-lite-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory ./agent_experiment/work/F_row_018/elasticjobf0d/Flaky/elastic-job-lite-core/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ elastic-job-lite-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 130 source files to ./agent_experiment/work/F_row_018/elasticjobf0d/Flaky/elastic-job-lite-core/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ elastic-job-lite-core ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.3:testCompile (default-testCompile) @ elastic-job-lite-core ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 153 source files to ./agent_experiment/work/F_row_018/elasticjobf0d/Flaky/elastic-job-lite-core/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.19.1:test (default-test) @ elastic-job-lite-core ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ elastic-job-lite-core ---
+[INFO] Building jar: ./agent_experiment/work/F_row_018/elasticjobf0d/Flaky/elastic-job-lite-core/target/elastic-job-lite-core-3.0.0.M1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-javadoc-plugin:2.10.3:jar (attach-javadocs) @ elastic-job-lite-core ---
+[INFO] Skipping javadoc generation
+[INFO] 
+[INFO] --- maven-source-plugin:2.4:jar-no-fork (attach-sources) @ elastic-job-lite-core ---
+[INFO] Building jar: ./agent_experiment/work/F_row_018/elasticjobf0d/Flaky/elastic-job-lite-core/target/elastic-job-lite-core-3.0.0.M1-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ elastic-job-lite-core ---
+[INFO] Installing ./agent_experiment/work/F_row_018/elasticjobf0d/Flaky/elastic-job-lite-core/target/elastic-job-lite-core-3.0.0.M1-SNAPSHOT.jar to ~/.m2/repository/io/elasticjob/elastic-job-lite-core/3.0.0.M1-SNAPSHOT/elastic-job-lite-core-3.0.0.M1-SNAPSHOT.jar
+[INFO] Installing ./agent_experiment/work/F_row_018/elasticjobf0d/Flaky/elastic-job-lite-core/pom.xml to ~/.m2/repository/io/elasticjob/elastic-job-lite-core/3.0.0.M1-SNAPSHOT/elastic-job-lite-core-3.0.0.M1-SNAPSHOT.pom
+[INFO] Installing ./agent_experiment/work/F_row_018/elasticjobf0d/Flaky/elastic-job-lite-core/target/elastic-job-lite-core-3.0.0.M1-SNAPSHOT-sources.jar to ~/.m2/repository/io/elasticjob/elastic-job-lite-core/3.0.0.M1-SNAPSHOT/elastic-job-lite-core-3.0.0.M1-SNAPSHOT-sources.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for elastic-job-lite 3.0.0.M1-SNAPSHOT:
+[INFO] 
+[INFO] elastic-job-lite ................................... SUCCESS [  0.744 s]
+[INFO] elastic-job-lite-core .............................. SUCCESS [  2.186 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.008 s
+[INFO] Finished at: 2026-10-30T15:43:18-04:00
+[INFO] ------------------------------------------------------------------------

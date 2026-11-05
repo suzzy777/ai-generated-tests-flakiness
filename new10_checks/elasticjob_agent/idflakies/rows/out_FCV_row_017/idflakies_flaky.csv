@@ -1,0 +1,3 @@
+test,type,generated,suspected_generated_polluters
+io.elasticjob.lite.event.rdb.JobEventRdbSearchTest.assertFindJobStatusTraceEventsWithTime,OD,false,io.elasticjob.lite.internal.schedule.JobRegistry_shutdown_0_0_Test#testShutdownWithExistingJob;io.elasticjob.lite.internal.schedule.JobRegistry_shutdown_0_0_Test#testShutdownWithNonExistingJob
+io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterModifyTest.assertPersistEphemeralSequential,OD,false,

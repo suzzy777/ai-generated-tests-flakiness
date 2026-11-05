@@ -1,0 +1,4 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.j256.ormlite.stmt.Where_toString_42_0_Test#testPeekMethod,own_junit5_runner,10,10,0,0,0,false,
+com.j256.ormlite.stmt.Where_toString_42_0_Test#testToStringEmptyClauseStack,own_junit5_runner,10,10,0,0,0,false,
+com.j256.ormlite.stmt.Where_toString_42_0_Test#testToStringWithClause,own_junit5_runner,10,10,0,0,0,false,

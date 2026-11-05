@@ -1,0 +1,5 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+org.apache.cloudstack.network.tungsten.service.TungstenServiceImpl_removeTungstenVmSecurityGroup_96_2_Test#testRemoveTungstenVmSecurityGroup_NoNic,testrunner,10,10,0,0,0,false,
+org.apache.cloudstack.network.tungsten.service.TungstenServiceImpl_removeTungstenVmSecurityGroup_96_2_Test#testRemoveTungstenVmSecurityGroup_NoSecurityGroupEnabled,testrunner,10,10,0,0,0,false,
+org.apache.cloudstack.network.tungsten.service.TungstenServiceImpl_removeTungstenVmSecurityGroup_96_2_Test#testRemoveTungstenVmSecurityGroup_NoTungstenProvider,testrunner,10,10,0,0,0,false,
+org.apache.cloudstack.network.tungsten.service.TungstenServiceImpl_removeTungstenVmSecurityGroup_96_2_Test#testRemoveTungstenVmSecurityGroup_Successful,testrunner,10,10,0,0,0,false,

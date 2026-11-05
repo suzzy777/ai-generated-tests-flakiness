@@ -1,0 +1,71 @@
+The focal method is `shutdown(String)` in the focal class `JobRegistry`, and their information is
+```io.elasticjob.lite.internal.schedule
+import io.elasticjob.lite.api.strategy.JobInstance;
+import io.elasticjob.lite.reg.base.CoordinatorRegistryCenter;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class JobRegistry {
+private static volatile JobRegistry instance;
+private Map<String, JobScheduleController> schedulerMap = new ConcurrentHashMap<>();
+private Map<String, CoordinatorRegistryCenter> regCenterMap = new ConcurrentHashMap<>();
+private Map<String, JobInstance> jobInstanceMap = new ConcurrentHashMap<>();
+private Map<String, Boolean> jobRunningMap = new ConcurrentHashMap<>();
+private Map<String, Integer> currentShardingTotalCountMap = new ConcurrentHashMap<>();
+public void shutdown(final String jobName) {
+        JobScheduleController scheduleController = schedulerMap.remove(jobName);
+        if (null != scheduleController) {
+            scheduleController.shutdown();
+        }
+        CoordinatorRegistryCenter regCenter = regCenterMap.remove(jobName);
+        if (null != regCenter) {
+            regCenter.evictCacheData("/" + jobName);
+        }
+        jobInstanceMap.remove(jobName);
+        jobRunningMap.remove(jobName);
+        currentShardingTotalCountMap.remove(jobName);
+    }
+}```.
+    Signatures of Other methods in the focal class are `public static JobRegistry getInstance(){}
+public void setJobRunning(final String jobName, final boolean isRunning){}
+public void setCurrentShardingTotalCount(final String jobName, final int currentShardingTotalCount){}
+
+`.
+    The brief information of dependent class `io.elasticjob.lite.reg.base.CoordinatorRegistryCenter` is
+    ```io.elasticjob.lite.reg.base
+import java.util.List;
+public interface CoordinatorRegistryCenter {
+
+
+void evictCacheData(String cachePath);
+}```.
+    The brief information of dependent class `io.elasticjob.lite.internal.schedule.JobScheduleController` is
+    ```io.elasticjob.lite.internal.schedule
+import io.elasticjob.lite.exception.JobSystemException;
+import lombok.RequiredArgsConstructor;
+import org.quartz.CronScheduleBuilder;
+import org.quartz.CronTrigger;
+import org.quartz.JobDetail;
+import org.quartz.Scheduler;
+import org.quartz.SchedulerException;
+import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
+import org.quartz.TriggerKey;
+@RequiredArgsConstructor
+public final class JobScheduleController {
+private final Scheduler scheduler;
+private final JobDetail jobDetail;
+private final String triggerIdentity;
+
+public synchronized void shutdown() {
+        try {
+            if (!scheduler.isShutdown()) {
+                scheduler.shutdown();
+            }
+        } catch (final SchedulerException ex) {
+            throw new JobSystemException(ex);
+        }
+    }
+}```.

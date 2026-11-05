@@ -1,0 +1,3 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.j256.ormlite.logger.LoggerFactory_setLogBackendType_6_0_Test#testSetLogBackendTypeWhenAvailable,own_junit5_runner,100,100,0,0,0,false,
+com.j256.ormlite.logger.LoggerFactory_setLogBackendType_6_0_Test#testSetLogBackendTypeWhenNotAvailable,own_junit5_runner,100,100,0,0,0,false,

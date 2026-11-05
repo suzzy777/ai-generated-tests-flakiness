@@ -1,0 +1,81 @@
+The focal method is `createSchema(ConnectionSource, String)` in the focal class `SchemaUtils`,
+Information of the focal method is
+```com.j256.ormlite.table
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.db.DatabaseType;
+import com.j256.ormlite.field.FieldType;
+import com.j256.ormlite.logger.Logger;
+import com.j256.ormlite.logger.LoggerFactory;
+import com.j256.ormlite.misc.IOUtils;
+import com.j256.ormlite.stmt.StatementBuilder.StatementType;
+import com.j256.ormlite.support.CompiledStatement;
+import com.j256.ormlite.support.ConnectionSource;
+import com.j256.ormlite.support.DatabaseConnection;
+import com.j256.ormlite.support.DatabaseResults;
+public class SchemaUtils {
+private static Logger logger = LoggerFactory.getLogger(SchemaUtils.class);
+private static final FieldType[] noFieldTypes = new FieldType[0];
+public static <T> int createSchema(ConnectionSource connectionSource, String schemaName) throws SQLException {
+		return doCreateSchema(connectionSource, schemaName, false);
+	}
+}```.
+
+    Signatures of Other methods in the focal class are `private SchemaUtils(){}
+
+
+`.
+    The brief information of dependent class `com.j256.ormlite.table.SchemaUtils` is
+    ```com.j256.ormlite.table
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.db.DatabaseType;
+import com.j256.ormlite.field.FieldType;
+import com.j256.ormlite.logger.Logger;
+import com.j256.ormlite.logger.LoggerFactory;
+import com.j256.ormlite.misc.IOUtils;
+import com.j256.ormlite.stmt.StatementBuilder.StatementType;
+import com.j256.ormlite.support.CompiledStatement;
+import com.j256.ormlite.support.ConnectionSource;
+import com.j256.ormlite.support.DatabaseConnection;
+import com.j256.ormlite.support.DatabaseResults;
+public class SchemaUtils {
+private static Logger logger = LoggerFactory.getLogger(SchemaUtils.class);
+private static final FieldType[] noFieldTypes = new FieldType[0];
+private SchemaUtils() {
+	}
+
+
+private static <T, ID> int doCreateSchema(ConnectionSource connectionSource, String schemaName, boolean ifNotExists)
+			throws SQLException {
+		DatabaseType databaseType = connectionSource.getDatabaseType();
+		List<String> statements = new ArrayList<String>();
+		List<String> queriesAfter = new ArrayList<String>();
+		addCreateSchemaStatements(databaseType, schemaName, statements, queriesAfter, ifNotExists, true);
+		DatabaseConnection connection = connectionSource.getReadWriteConnection(schemaName);
+		try {
+			int stmtC = doStatements(connection, "create", statements, false,
+					databaseType.isCreateSchemaReturnsNegative(), databaseType.isCreateSchemaReturnsZero());
+			stmtC += doCreateTestQueries(connection, databaseType, queriesAfter);
+			return stmtC;
+		} finally {
+			connectionSource.releaseConnection(connection);
+		}
+	}
+}```.
+    The brief information of dependent class `com.j256.ormlite.support.ConnectionSource` is
+    ```com.j256.ormlite.support
+import java.sql.SQLException;
+import com.j256.ormlite.db.DatabaseType;
+public interface ConnectionSource {
+
+public DatabaseType getDatabaseType();
+}```.

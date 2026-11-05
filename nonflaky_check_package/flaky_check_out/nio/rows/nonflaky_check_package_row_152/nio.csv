@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+cn.crane4j.core.util.ConfigurationUtil_parsePropTemplate_9_3_Test#testParsePropTemplate,testrunner,10,10,0,0,0,false,

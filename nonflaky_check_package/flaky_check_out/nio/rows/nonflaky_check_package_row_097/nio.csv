@@ -1,0 +1,4 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.j256.ormlite.dao.BaseDaoImpl_executeRawNoArgs_58_0_Test#testExecuteRawNoArgsNotInitialized,own_junit5_runner,10,10,0,0,0,false,
+com.j256.ormlite.dao.BaseDaoImpl_executeRawNoArgs_58_0_Test#testExecuteRawNoArgsSQLException,own_junit5_runner,10,10,0,0,0,false,
+com.j256.ormlite.dao.BaseDaoImpl_executeRawNoArgs_58_0_Test#testExecuteRawNoArgsSuccess,own_junit5_runner,10,10,0,0,0,false,

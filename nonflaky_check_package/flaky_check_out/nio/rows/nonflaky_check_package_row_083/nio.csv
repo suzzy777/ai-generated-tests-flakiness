@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+io.elasticjob.lite.internal.failover.FailoverNode_getExecutionFailoverNode_1_0_Test#testGetExecutionFailoverNode,testrunner,10,10,0,0,0,false,

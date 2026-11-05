@@ -1,0 +1,6 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.intuit.karate.core.Tag_equals_6_0_Test#testEqualsDifferentClass,own_junit5_runner,10,10,0,0,0,false,
+com.intuit.karate.core.Tag_equals_6_0_Test#testEqualsDifferentText,own_junit5_runner,10,10,0,0,0,false,
+com.intuit.karate.core.Tag_equals_6_0_Test#testEqualsNullObject,own_junit5_runner,10,10,0,0,0,false,
+com.intuit.karate.core.Tag_equals_6_0_Test#testEqualsSameObject,own_junit5_runner,10,10,0,0,0,false,
+com.intuit.karate.core.Tag_equals_6_0_Test#testEqualsSameText,own_junit5_runner,10,10,0,0,0,false,

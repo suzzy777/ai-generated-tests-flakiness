@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.intuit.karate.resource.ResourceUtils_classPathToFile_13_0_Test#testClassPathToFile_InvalidPath,own_junit5_runner,10,10,0,0,0,false,

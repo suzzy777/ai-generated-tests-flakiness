@@ -1,0 +1,3 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+io.elasticjob.lite.internal.schedule.JobRegistry_shutdown_0_0_Test#testShutdownWithExistingJob,testrunner,100,100,0,0,0,false,
+io.elasticjob.lite.internal.schedule.JobRegistry_shutdown_0_0_Test#testShutdownWithNonExistingJob,testrunner,100,100,0,0,0,false,

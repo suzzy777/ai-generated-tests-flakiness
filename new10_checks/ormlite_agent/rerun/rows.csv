@@ -1,0 +1,13 @@
+id,zip,module,java,focal,mockito_fix,test_classes,build_status,status,methods,flaky_generated,flaky_other,note,log
+out_A_row_022,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_0_0_Test,not_needed,always_failed,1,0,,,
+out_A_row_023,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_0_0_Test,not_needed,no_flaky_found,1,0,,,
+out_A_row_024,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_0_0_Test,not_needed,no_flaky_found,1,0,,,
+out_FCV_row_022,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_0_0_Test,not_needed,always_failed,2,0,,,
+out_FCV_row_023,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_0_0_Test,not_needed,always_failed,1,0,,,
+out_FCV_row_024,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_0_0_Test,not_needed,always_failed,1,0,,,
+out_FC_row_022,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_0_0_Test,not_needed,always_failed,1,0,,,
+out_FC_row_023,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_0_0_Test,not_needed,no_flaky_found,2,0,,,
+out_FC_row_024,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_0_0_Test,not_needed,always_failed,2,0,,,
+out_F_row_022,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_0_0_Test,not_needed,no_flaky_found,3,0,,,
+out_F_row_023,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_0_0_Test,not_needed,always_failed,2,0,,,
+out_F_row_024,ormlitecore59309e5,.,8,com.j256.ormlite.table.SchemaUtils#createSchema,false,SchemaUtils_createSchema_0_0_Test,not_needed,always_failed,1,0,,,

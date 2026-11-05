@@ -1,0 +1,90 @@
+The focal method is `isLocalInstancePath(String)` in the focal class `InstanceNode`, and their information is
+```io.elasticjob.lite.internal.instance
+import io.elasticjob.lite.internal.schedule.JobRegistry;
+import io.elasticjob.lite.internal.storage.JobNodePath;
+public final class InstanceNode {
+public static final String ROOT = "instances";
+private static final String INSTANCES = ROOT + "/%s";
+private final String jobName;
+private final JobNodePath jobNodePath;
+boolean isLocalInstancePath(final String path) {
+        return path.equals(jobNodePath.getFullPath(String.format(INSTANCES, JobRegistry.getInstance().getJobInstance(jobName).getJobInstanceId())));
+    }
+}```.
+    Signatures of Other methods in the focal class are `public InstanceNode(final String jobName){}
+public String getInstanceFullPath(){}
+String getLocalInstanceNode(){}
+
+`.
+    The brief information of dependent class `io.elasticjob.lite.internal.storage.JobNodePath` is
+    ```io.elasticjob.lite.internal.storage
+import lombok.RequiredArgsConstructor;
+@RequiredArgsConstructor
+public final class JobNodePath {
+private static final String LEADER_HOST_NODE = "leader/election/instance";
+private static final String CONFIG_NODE = "config";
+private static final String SERVERS_NODE = "servers";
+private static final String INSTANCES_NODE = "instances";
+private static final String SHARDING_NODE = "sharding";
+private final String jobName;
+public String getConfigNodePath(){}
+public String getLeaderHostNodePath(){}
+public String getServerNodePath(){}
+public String getInstancesNodePath(){}
+public String getShardingNodePath(){}
+public String getFullPath(final String node) {
+        return String.format("/%s/%s", jobName, node);
+    }
+}```.
+    The brief information of dependent class `io.elasticjob.lite.api.strategy.JobInstance` is
+    ```io.elasticjob.lite.api.strategy
+import io.elasticjob.lite.util.env.IpUtils;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import java.lang.management.ManagementFactory;
+@RequiredArgsConstructor
+@Getter
+@EqualsAndHashCode(of = "jobInstanceId")
+public final class JobInstance {
+private static final String DELIMITER = "@-@";
+private final String jobInstanceId;
+public JobInstance() {
+        jobInstanceId = IpUtils.getIp() + DELIMITER + ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
+    }
+
+public String getIp(){}
+}```.
+    The brief information of dependent class `io.elasticjob.lite.internal.schedule.JobRegistry` is
+    ```io.elasticjob.lite.internal.schedule
+import io.elasticjob.lite.api.strategy.JobInstance;
+import io.elasticjob.lite.reg.base.CoordinatorRegistryCenter;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class JobRegistry {
+private static volatile JobRegistry instance;
+private Map<String, JobScheduleController> schedulerMap = new ConcurrentHashMap<>();
+private Map<String, CoordinatorRegistryCenter> regCenterMap = new ConcurrentHashMap<>();
+private Map<String, JobInstance> jobInstanceMap = new ConcurrentHashMap<>();
+private Map<String, Boolean> jobRunningMap = new ConcurrentHashMap<>();
+private Map<String, Integer> currentShardingTotalCountMap = new ConcurrentHashMap<>();
+public static JobRegistry getInstance(){}
+public void setJobRunning(final String jobName, final boolean isRunning){}
+public void setCurrentShardingTotalCount(final String jobName, final int currentShardingTotalCount){}
+public JobInstance getJobInstance(final String jobName) {
+        return jobInstanceMap.get(jobName);
+    }
+public static JobRegistry getInstance() {
+        if (null == instance) {
+            synchronized (JobRegistry.class) {
+                if (null == instance) {
+                    instance = new JobRegistry();
+                }
+            }
+        }
+        return instance;
+    }
+}```.

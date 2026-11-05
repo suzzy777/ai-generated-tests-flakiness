@@ -1,0 +1,4 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+net.sf.marineapi.ais.parser.AISMessageFactory_create_0_0_Test#testCreateWithExistingParser,testrunner,100,100,0,0,0,false,
+net.sf.marineapi.ais.parser.AISMessageFactory_create_0_0_Test#testCreateWithNoParser,testrunner,100,100,0,0,0,false,
+net.sf.marineapi.ais.parser.AISMessageFactory_create_0_0_Test#testCreateWithReflectionException,testrunner,100,100,0,0,0,false,

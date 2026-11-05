@@ -1,0 +1,3 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+io.elasticjob.lite.internal.sharding.ShardingNode_getItemByRunningItemPath_4_0_Test#testGetItemByRunningItemPathInvalidPath,testrunner,10,10,0,0,0,false,
+io.elasticjob.lite.internal.sharding.ShardingNode_getItemByRunningItemPath_4_0_Test#testGetItemByRunningItemPathValidPath,testrunner,10,10,0,0,0,false,

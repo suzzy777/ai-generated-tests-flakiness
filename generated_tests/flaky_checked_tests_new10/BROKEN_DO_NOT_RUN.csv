@@ -1,0 +1,14 @@
+folder,file_here,row,project,methods,agent_exit,failure
+agent_A,row_016/JobRegistry_shutdown_0_0_Test.java,16,https://github.com/apache/shardingsphere-elasticjob,testShutdownWithExistingJob;testShutdownWithNonExistingJob,LimitsExceeded,compile error (agent's own run: BUILD FAILURE)
+agent_A,row_022/SchemaUtils_createSchema_0_0_Test.java,22,https://github.com/j256/ormlite-core,testCreateSchema,LimitsExceeded,"compile error, cannot find symbol"
+agent_F,row_023/SchemaUtils_createSchema_0_0_Test.java,23,https://github.com/j256/ormlite-core,testCreateSchema;testCreateSchemaWithSQLException,LimitsExceeded,compile error
+agent_F,row_024/SchemaUtils_createSchema_0_0_Test.java,24,https://github.com/j256/ormlite-core,testCreateSchema,LimitsExceeded,NullPointerException
+agent_F,row_028/AISMessage09Parser_isAccurate_0_0_Test.java,28,https://github.com/ktuukkan/marine-api,testIsAccurate;testIsNotAccurate,LimitsExceeded,Wrong message length
+agent_FC,row_022/SchemaUtils_createSchema_0_0_Test.java,22,https://github.com/j256/ormlite-core,testCreateSchema,LimitsExceeded,compile error
+agent_FC,row_024/SchemaUtils_createSchema_0_0_Test.java,24,https://github.com/j256/ormlite-core,testCreateSchema;testCreateSchemaThrowsSQLException,LimitsExceeded,compile error
+agent_FC,row_028/AISMessage09Parser_isAccurate_0_0_Test.java,28,https://github.com/ktuukkan/marine-api,testIsAccurateTrue;testIsAccurateFalse,Submitted,Sixbit decoder is empty! (agent submitted anyway)
+agent_FC,row_029/AISMessage09Parser_isAccurate_0_0_Test.java,29,https://github.com/ktuukkan/marine-api,testIsAccurate_true;testIsAccurate_false,LimitsExceeded,Wrong message length
+agent_FC,row_030/AISMessage09Parser_isAccurate_0_0_Test.java,30,https://github.com/ktuukkan/marine-api,testIsAccurateTrue;testIsAccurateFalse,LimitsExceeded,Wrong message length
+agent_FCV,row_022/SchemaUtils_createSchema_0_0_Test.java,22,https://github.com/j256/ormlite-core,testCreateSchema;testCreateSchemaWithSQLException,LimitsExceeded,compile error
+agent_FCV,row_023/SchemaUtils_createSchema_0_0_Test.java,23,https://github.com/j256/ormlite-core,testCreateSchema,LimitsExceeded,NullPointerException
+agent_FCV,row_024/SchemaUtils_createSchema_0_0_Test.java,24,https://github.com/j256/ormlite-core,testCreateSchema,LimitsExceeded,compile error

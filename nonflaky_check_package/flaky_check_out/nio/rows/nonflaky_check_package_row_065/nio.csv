@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+io.elasticjob.lite.executor.JobExecutorFactory_getJobExecutor_0_0_Test#testGetJobExecutorWithUnsupportedJobType,testrunner,10,10,0,0,0,false,

@@ -1,0 +1,3 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+org.apache.cloudstack.network.tungsten.service.TungstenServiceImpl_listTungstenApplicationPolicySet_81_2_Test#testListTungstenApplicationPolicySet_EmptyResponse,testrunner,10,10,0,0,0,false,
+org.apache.cloudstack.network.tungsten.service.TungstenServiceImpl_listTungstenApplicationPolicySet_81_2_Test#testListTungstenApplicationPolicySet_Success,testrunner,10,10,0,0,0,false,

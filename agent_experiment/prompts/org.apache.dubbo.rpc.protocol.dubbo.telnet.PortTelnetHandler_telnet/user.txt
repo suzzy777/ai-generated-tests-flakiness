@@ -1,0 +1,243 @@
+The focal method is `telnet(Channel, String)` in the focal class `PortTelnetHandler`, and their information is
+```org.apache.dubbo.rpc.protocol.dubbo.telnet
+import org.apache.dubbo.common.extension.Activate;
+import org.apache.dubbo.common.utils.StringUtils;
+import org.apache.dubbo.remoting.Channel;
+import org.apache.dubbo.remoting.exchange.ExchangeChannel;
+import org.apache.dubbo.remoting.exchange.ExchangeServer;
+import org.apache.dubbo.remoting.telnet.TelnetHandler;
+import org.apache.dubbo.remoting.telnet.support.Help;
+import org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol;
+import java.util.Collection;
+@Activate
+@Help(parameter = "[-l] [port]", summary = "Print server ports and connections.", detail = "Print server ports and connections.")
+public class PortTelnetHandler {
+
+@Override
+    public String telnet(Channel channel, String message) {
+        StringBuilder buf = new StringBuilder();
+        String port = null;
+        boolean detail = false;
+        if (message.length() > 0) {
+            String[] parts = message.split("\\s+");
+            for (String part : parts) {
+                if ("-l".equals(part)) {
+                    detail = true;
+                } else {
+                    if (!StringUtils.isInteger(part)) {
+                        return "Illegal port " + part + ", must be integer.";
+                    }
+                    port = part;
+                }
+            }
+        }
+        if (port == null || port.length() == 0) {
+            for (ExchangeServer server : DubboProtocol.getDubboProtocol().getServers()) {
+                if (buf.length() > 0) {
+                    buf.append("\r\n");
+                }
+                if (detail) {
+                    buf.append(server.getUrl().getProtocol() + "://" + server.getUrl().getAddress());
+                } else {
+                    buf.append(server.getUrl().getPort());
+                }
+            }
+        } else {
+            int p = Integer.parseInt(port);
+            ExchangeServer server = null;
+            for (ExchangeServer s : DubboProtocol.getDubboProtocol().getServers()) {
+                if (p == s.getUrl().getPort()) {
+                    server = s;
+                    break;
+                }
+            }
+            if (server != null) {
+                Collection<ExchangeChannel> channels = server.getExchangeChannels();
+                for (ExchangeChannel c : channels) {
+                    if (buf.length() > 0) {
+                        buf.append("\r\n");
+                    }
+                    if (detail) {
+                        buf.append(c.getRemoteAddress() + " -> " + c.getLocalAddress());
+                    } else {
+                        buf.append(c.getRemoteAddress());
+                    }
+                }
+            } else {
+                buf.append("No such port " + port);
+            }
+        }
+        return buf.toString();
+    }
+}```.
+    The brief information of dependent class `org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol` is
+    ```org.apache.dubbo.rpc.protocol.dubbo
+import org.apache.dubbo.common.Constants;
+import org.apache.dubbo.common.URL;
+import org.apache.dubbo.common.extension.ExtensionLoader;
+import org.apache.dubbo.common.serialize.support.SerializableClassRegistry;
+import org.apache.dubbo.common.serialize.support.SerializationOptimizer;
+import org.apache.dubbo.common.utils.ConcurrentHashSet;
+import org.apache.dubbo.common.utils.ConfigUtils;
+import org.apache.dubbo.common.utils.NetUtils;
+import org.apache.dubbo.common.utils.StringUtils;
+import org.apache.dubbo.remoting.Channel;
+import org.apache.dubbo.remoting.RemotingException;
+import org.apache.dubbo.remoting.Transporter;
+import org.apache.dubbo.remoting.exchange.ExchangeChannel;
+import org.apache.dubbo.remoting.exchange.ExchangeClient;
+import org.apache.dubbo.remoting.exchange.ExchangeHandler;
+import org.apache.dubbo.remoting.exchange.ExchangeServer;
+import org.apache.dubbo.remoting.exchange.Exchangers;
+import org.apache.dubbo.remoting.exchange.support.ExchangeHandlerAdapter;
+import org.apache.dubbo.rpc.AsyncContextImpl;
+import org.apache.dubbo.rpc.AsyncRpcResult;
+import org.apache.dubbo.rpc.Exporter;
+import org.apache.dubbo.rpc.Invocation;
+import org.apache.dubbo.rpc.Invoker;
+import org.apache.dubbo.rpc.Protocol;
+import org.apache.dubbo.rpc.Result;
+import org.apache.dubbo.rpc.RpcContext;
+import org.apache.dubbo.rpc.RpcException;
+import org.apache.dubbo.rpc.RpcInvocation;
+import org.apache.dubbo.rpc.protocol.AbstractProtocol;
+import java.net.InetSocketAddress;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+public class DubboProtocol {
+public static final String NAME = "dubbo";
+public static final int DEFAULT_PORT = 20880;
+private static final String IS_CALLBACK_SERVICE_INVOKE = "_isCallBackServiceInvoke";
+private static DubboProtocol INSTANCE;
+private final Map<String, ExchangeServer> serverMap = new ConcurrentHashMap<String, ExchangeServer>();
+private final Map<String, ReferenceCountExchangeClient> referenceClientMap = new ConcurrentHashMap<String, ReferenceCountExchangeClient>();
+private final ConcurrentMap<String, LazyConnectExchangeClient> ghostClientMap = new ConcurrentHashMap<String, LazyConnectExchangeClient>();
+private final ConcurrentMap<String, Object> locks = new ConcurrentHashMap<String, Object>();
+private final Set<String> optimizers = new ConcurrentHashSet<String>();
+private final ConcurrentMap<String, String> stubServiceMethodsMap = new ConcurrentHashMap<String, String>();
+private ExchangeHandler requestHandler = new ExchangeHandlerAdapter() {
+
+        @Override
+        public CompletableFuture<Object> reply(ExchangeChannel channel, Object message) throws RemotingException {
+            if (message instanceof Invocation) {
+                Invocation inv = (Invocation) message;
+                Invoker<?> invoker = getInvoker(channel, inv);
+                // need to consider backward-compatibility if it's a callback
+                if (Boolean.TRUE.toString().equals(inv.getAttachments().get(IS_CALLBACK_SERVICE_INVOKE))) {
+                    String methodsStr = invoker.getUrl().getParameters().get("methods");
+                    boolean hasMethod = false;
+                    if (methodsStr == null || !methodsStr.contains(",")) {
+                        hasMethod = inv.getMethodName().equals(methodsStr);
+                    } else {
+                        String[] methods = methodsStr.split(",");
+                        for (String method : methods) {
+                            if (inv.getMethodName().equals(method)) {
+                                hasMethod = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (!hasMethod) {
+                        logger.warn(new IllegalStateException("The methodName " + inv.getMethodName()
+                                + " not found in callback service interface ,invoke will be ignored."
+                                + " please update the api interface. url is:"
+                                + invoker.getUrl()) + " ,invocation is :" + inv);
+                        return null;
+                    }
+                }
+                RpcContext rpcContext = RpcContext.getContext();
+                boolean supportServerAsync = invoker.getUrl().getMethodParameter(inv.getMethodName(), Constants.ASYNC_KEY, false);
+                if (supportServerAsync) {
+                    CompletableFuture<Object> future = new CompletableFuture<>();
+                    rpcContext.setAsyncContext(new AsyncContextImpl(future));
+                }
+                rpcContext.setRemoteAddress(channel.getRemoteAddress());
+                Result result = invoker.invoke(inv);
+
+                if (result instanceof AsyncRpcResult) {
+                    return ((AsyncRpcResult) result).getResultFuture().thenApply(r -> (Object) r);
+                } else {
+                    return CompletableFuture.completedFuture(result);
+                }
+            }
+            throw new RemotingException(channel, "Unsupported request: "
+                    + (message == null ? null : (message.getClass().getName() + ": " + message))
+                    + ", channel: consumer: " + channel.getRemoteAddress() + " --> provider: " + channel.getLocalAddress());
+        }
+
+        @Override
+        public void received(Channel channel, Object message) throws RemotingException {
+            if (message instanceof Invocation) {
+                reply((ExchangeChannel) channel, message);
+            } else {
+                super.received(channel, message);
+            }
+        }
+
+        @Override
+        public void connected(Channel channel) throws RemotingException {
+            invoke(channel, Constants.ON_CONNECT_KEY);
+        }
+
+        @Override
+        public void disconnected(Channel channel) throws RemotingException {
+            if (logger.isInfoEnabled()) {
+                logger.info("disconnected from " + channel.getRemoteAddress() + ",url:" + channel.getUrl());
+            }
+            invoke(channel, Constants.ON_DISCONNECT_KEY);
+        }
+
+        private void invoke(Channel channel, String methodKey) {
+            Invocation invocation = createInvocation(channel, channel.getUrl(), methodKey);
+            if (invocation != null) {
+                try {
+                    received(channel, invocation);
+                } catch (Throwable t) {
+                    logger.warn("Failed to invoke event method " + invocation.getMethodName() + "(), cause: " + t.getMessage(), t);
+                }
+            }
+        }
+
+        private Invocation createInvocation(Channel channel, URL url, String methodKey) {
+            String method = url.getParameter(methodKey);
+            if (method == null || method.length() == 0) {
+                return null;
+            }
+            RpcInvocation invocation = new RpcInvocation(method, new Class<?>[0], new Object[0]);
+            invocation.setAttachment(Constants.PATH_KEY, url.getPath());
+            invocation.setAttachment(Constants.GROUP_KEY, url.getParameter(Constants.GROUP_KEY));
+            invocation.setAttachment(Constants.INTERFACE_KEY, url.getParameter(Constants.INTERFACE_KEY));
+            invocation.setAttachment(Constants.VERSION_KEY, url.getParameter(Constants.VERSION_KEY));
+            if (url.getParameter(Constants.STUB_EVENT_KEY, false)) {
+                invocation.setAttachment(Constants.STUB_EVENT_KEY, Boolean.TRUE.toString());
+            }
+            return invocation;
+        }
+    };
+public DubboProtocol() {
+        INSTANCE = this;
+    }
+
+public static DubboProtocol getDubboProtocol(){}
+public Collection<ExchangeServer> getServers(){}
+public Collection<Exporter<?>> getExporters(){}
+Map<String, Exporter<?>> getExporterMap(){}
+public Collection<Invoker<?>> getInvokers(){}
+@Override
+    public int getDefaultPort(){}
+public Collection<ExchangeServer> getServers() {
+        return Collections.unmodifiableCollection(serverMap.values());
+    }
+public static DubboProtocol getDubboProtocol() {
+        if (INSTANCE == null) {
+            ExtensionLoader.getExtensionLoader(Protocol.class).getExtension(DubboProtocol.NAME); // load
+        }
+        return INSTANCE;
+    }
+}```.

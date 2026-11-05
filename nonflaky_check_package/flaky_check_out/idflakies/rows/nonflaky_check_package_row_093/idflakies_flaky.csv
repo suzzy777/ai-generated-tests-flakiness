@@ -1,0 +1,6 @@
+test,type,generated,suspected_generated_polluters
+io.elasticjob.lite.event.rdb.JobEventRdbSearchTest.assertFindJobExecutionEventsWithTime,OD,false,
+io.elasticjob.lite.event.rdb.JobEventRdbSearchTest.assertFindJobStatusTraceEventsWithTime,OD,false,io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenter_remove_14_3_Test#testRemoveSuccess
+io.elasticjob.lite.internal.instance.ShutdownListenerManagerTest.assertIsShutdownAlready,OD,false,io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenter_remove_14_3_Test#testRemoveSuccess
+io.elasticjob.lite.internal.schedule.JobRegistryTest.assertGetCurrentShardingTotalCountIfNull,OD,false,io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenter_remove_14_3_Test#testRemoveSuccess
+io.elasticjob.lite.reg.zookeeper.ZookeeperRegistryCenterModifyTest.assertPersistEphemeralSequential,OD,false,

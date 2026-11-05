@@ -1,0 +1,4 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_4_0_Test#testRemoveWithInvalidKey,testrunner,100,100,0,0,0,false,
+com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_4_0_Test#testRemoveWithNullKey,testrunner,100,100,0,0,0,false,
+com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_4_0_Test#testRemoveWithValidKey,testrunner,100,100,0,0,0,false,

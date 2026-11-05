@@ -1,0 +1,4 @@
+id,zip,module,java,focal,mockito_fix,test_classes,build_status,status,methods,flaky_generated,flaky_other,note,log
+out_A_row_013,scimono=scimono-client=7487ec5,scimono-client,11,com.sap.scimono.client.GroupRequest#createGroup,false,GroupRequest_createGroup_0_0_Test,cached,no_flaky_found,,0,0,rounds 20/20; ,./agent_experiment/out_flaky_A/lane4/idflakies/rows/out_A_row_013/idflakies.log
+out_A_row_014,scimono=scimono-client=7487ec5,scimono-client,11,com.sap.scimono.client.GroupRequest#createGroup,false,GroupRequest_createGroup_0_0_Test,cached,no_flaky_found,,0,0,rounds 20/20; ,./agent_experiment/out_flaky_A/lane4/idflakies/rows/out_A_row_014/idflakies.log
+out_A_row_015,scimono=scimono-client=7487ec5,scimono-client,11,com.sap.scimono.client.GroupRequest#createGroup,false,GroupRequest_createGroup_0_0_Test,cached,no_flaky_found,,0,0,rounds 20/20; ,./agent_experiment/out_flaky_A/lane4/idflakies/rows/out_A_row_015/idflakies.log

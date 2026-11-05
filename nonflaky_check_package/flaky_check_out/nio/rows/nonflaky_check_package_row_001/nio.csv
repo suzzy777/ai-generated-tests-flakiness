@@ -1,0 +1,7 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.sap.scimono.client.ActionResponseStatusConfig_isSuccess_1_0_Test#testGetSuccessResponseStatuses,own_junit5_runner,10,10,0,0,0,false,
+com.sap.scimono.client.ActionResponseStatusConfig_isSuccess_1_0_Test#testIsSuccessWithFailureCode,own_junit5_runner,10,10,0,0,0,false,
+com.sap.scimono.client.ActionResponseStatusConfig_isSuccess_1_0_Test#testIsSuccessWithPrivateMethod,own_junit5_runner,10,10,0,0,0,false,
+com.sap.scimono.client.ActionResponseStatusConfig_isSuccess_1_0_Test#testIsSuccessWithSuccessCode,own_junit5_runner,10,10,0,0,0,false,
+com.sap.scimono.client.ActionResponseStatusConfig_isSuccess_2_0_Test#testIsSuccess_withNonSuccessStatus,own_junit5_runner,10,10,0,0,0,false,
+com.sap.scimono.client.ActionResponseStatusConfig_isSuccess_2_0_Test#testIsSuccess_withSuccessStatus,own_junit5_runner,10,10,0,0,0,false,

@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+org.apache.cloudstack.network.tungsten.resource.TungstenResource_getCurrentStatus_4_0_Test#testGetCurrentStatus_Failure,testrunner,10,10,0,0,0,false,

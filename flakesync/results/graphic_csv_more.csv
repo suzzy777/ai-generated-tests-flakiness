@@ -1,0 +1,10 @@
+folder,files,methods,methods_run,concurrentfind_pass,delaylocs_ran,methods_skipped_broken
+agent_FC_12,12,32,32,32,0,0
+agent_FCV_9,9,26,26,26,0,0
+agent_A,14,22,19,19,0,3
+agent_F,15,24,19,19,0,5
+agent_FC,15,24,15,15,0,9
+agent_FCV,15,23,19,19,0,4
+prompt_default,12,21,21,21,0,0
+prompt_cleanup,9,14,14,14,0,0
+Total,101,186,165,165,0,21

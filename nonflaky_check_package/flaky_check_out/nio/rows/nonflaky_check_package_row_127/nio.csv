@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+net.sf.marineapi.ais.parser.AISMessage09Parser_getLongitudeInDegrees_4_1_Test#testGetLongitudeInDegrees,testrunner,10,10,0,0,0,false,

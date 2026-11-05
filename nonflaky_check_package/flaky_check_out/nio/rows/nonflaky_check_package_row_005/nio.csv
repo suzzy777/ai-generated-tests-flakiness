@@ -1,0 +1,2 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+com.sap.scimono.client.GroupRequest_readSingleGroup_1_2_Test#testReadSingleGroup,own_junit5_runner,10,10,0,0,0,false,
